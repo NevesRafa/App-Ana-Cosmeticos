@@ -12,16 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AnaCosmeticos">
         <activity
-            android:name="com.nevesrafael.anacosmeticos.CadastroActivity"
+            android:name=".InformacoesDoItemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroActivity"
             android:label="Cadastra Produtos" />
         <activity
-            android:name="com.nevesrafael.anacosmeticos.ListaProdutosActivity"
-            android:label="Lista de Produtos"
-            android:exported="true">
-
-        </activity>
+            android:name=".ListaProdutosActivity"
+            android:exported="true"
+            android:label="Lista de Produtos"></activity>
         <activity
-            android:name="com.nevesrafael.anacosmeticos.TelaInicialActivity"
+            android:name=".TelaInicialActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

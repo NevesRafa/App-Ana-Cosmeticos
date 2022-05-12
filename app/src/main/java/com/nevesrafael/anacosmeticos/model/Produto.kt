@@ -1,5 +1,9 @@
 package com.nevesrafael.anacosmeticos.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Produto(
     val nome: String,
     val categoria: String,
@@ -10,4 +14,4 @@ data class Produto(
     val valorVendaRs: Double,
     val valorVendaY: Int,
     val imagem: String? = null
-)
+):Parcelable
