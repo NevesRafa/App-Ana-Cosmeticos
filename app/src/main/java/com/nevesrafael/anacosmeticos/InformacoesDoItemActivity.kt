@@ -40,8 +40,6 @@ class InformacoesDoItemActivity : AppCompatActivity() {
             binding.detalhesValorVendaIene.setText(produto.valorVendaY.toString(), TextView.BufferType.EDITABLE)
             binding.detalhesImagem.tentaCarregarImagem(produto.imagem)
 
-            R.string.app_name
-
         }
 
     }
