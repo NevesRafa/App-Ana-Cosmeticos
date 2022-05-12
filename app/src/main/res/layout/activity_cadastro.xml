@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F8BBD0"
+        tools:context=".CadastroActivity">
+
+        <ImageView
+            android:id="@+id/cadastro_imagem"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/imagem_padrao"
+            app:layout_constraintBottom_toTopOf="@id/input_text_nome"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_text_nome"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Nome"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cadastro_imagem">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_alternates"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_text_categoria"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Categoria"
+            app:layout_constraintEnd_toEndOf="@id/input_text_nome"
+            app:layout_constraintStart_toStartOf="@id/input_text_nome"
+            app:layout_constraintTop_toBottomOf="@id/input_text_nome">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/categoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_alternates"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_text_fabricante"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Fabricante"
+            app:layout_constraintEnd_toEndOf="@id/input_text_categoria"
+            app:layout_constraintStart_toStartOf="@id/input_text_categoria"
+            app:layout_constraintTop_toBottomOf="@id/input_text_categoria">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fabricante"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_alternates"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_text_und_medida"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Unidade de medida"
+            app:layout_constraintEnd_toEndOf="@id/input_text_fabricante"
+            app:layout_constraintStart_toStartOf="@id/input_text_fabricante"
+            app:layout_constraintTop_toBottomOf="@id/input_text_fabricante">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/und_medida"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_alternates"
+                android:inputType="number" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_text_quantidade"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Quantidade"
+            app:layout_constraintEnd_toEndOf="@id/input_text_und_medida"
+            app:layout_constraintStart_toStartOf="@id/input_text_und_medida"
+            app:layout_constraintTop_toBottomOf="@id/input_text_und_medida">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/quantidade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_alternates"
+                android:inputType="number" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_text_valor_compra"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Valor de Compra"
+            app:layout_constraintEnd_toEndOf="@id/input_text_quantidade"
+            app:layout_constraintStart_toStartOf="@id/input_text_quantidade"
+            app:layout_constraintTop_toBottomOf="@id/input_text_quantidade">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/valor_compra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_alternates"
+                android:inputType="number" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_text_valor_venda_rs"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Valor de venda (R$)"
+            app:layout_constraintEnd_toEndOf="@id/input_text_valor_compra"
+            app:layout_constraintStart_toStartOf="@id/input_text_valor_compra"
+            app:layout_constraintTop_toBottomOf="@id/input_text_valor_compra">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/valor_venda_rs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_alternates"
+                android:inputType="number" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_text_venda_iene"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Valor de venda (¥)"
+            app:layout_constraintEnd_toEndOf="@id/input_text_valor_venda_rs"
+            app:layout_constraintStart_toStartOf="@id/input_text_valor_venda_rs"
+            app:layout_constraintTop_toBottomOf="@id/input_text_valor_venda_rs">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/valor_venda_iene"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_alternates"
+                android:inputType="number" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/botaoSalvar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Salvar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_text_venda_iene"
+            app:layout_constraintVertical_bias="1" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
