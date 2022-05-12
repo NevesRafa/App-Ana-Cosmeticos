@@ -12,6 +12,18 @@ class ProdutoDao {
 
     // utilizou o companion object para que salva-se o item na tela
     companion object {
-        private val produtos = mutableListOf<Produto>()
+        private val produtos = mutableListOf<Produto>(
+            //TODO: tirar depois hein
+            Produto(
+                "NomeTeste",
+                "Categoria Teste",
+                100,
+                "Fabricante teste",
+                200,
+                20.0,
+                30.0,
+                400
+            )
+        )
     }
 }
