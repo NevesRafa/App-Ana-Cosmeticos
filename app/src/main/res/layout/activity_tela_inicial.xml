@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFCFD9"
-    tools:context=".TelaInicialActivity">
+    tools:context=".telas.tela_inicial.TelaInicialActivity">
 
     <Button
         android:id="@+id/botaoCadastra"

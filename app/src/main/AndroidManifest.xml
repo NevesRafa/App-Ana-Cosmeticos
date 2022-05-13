@@ -12,17 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AnaCosmeticos">
         <activity
-            android:name=".InformacoesDoItemActivity"
+            android:name=".telas.informacoes_do_item.InformacoesDoItemActivity"
             android:exported="false" />
         <activity
-            android:name=".CadastroActivity"
+            android:name=".telas.cadastro_produto.CadastroActivity"
             android:label="Cadastra Produtos" />
         <activity
-            android:name=".ListaProdutosActivity"
+            android:name=".telas.lista_produtos.ListaProdutosActivity"
             android:exported="true"
             android:label="Lista de Produtos"></activity>
         <activity
-            android:name=".TelaInicialActivity"
+            android:name=".telas.tela_inicial.TelaInicialActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

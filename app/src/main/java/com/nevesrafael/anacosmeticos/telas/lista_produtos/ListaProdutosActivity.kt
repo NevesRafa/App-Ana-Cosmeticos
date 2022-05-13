@@ -1,13 +1,14 @@
-package com.nevesrafael.anacosmeticos
+package com.nevesrafael.anacosmeticos.telas.lista_produtos
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.nevesrafael.anacosmeticos.telas.cadastro_produto.CadastroActivity
+import com.nevesrafael.anacosmeticos.telas.informacoes_do_item.InformacoesDoItemActivity
 import com.nevesrafael.anacosmeticos.dao.ProdutoDao
 import com.nevesrafael.anacosmeticos.recycleview.adapter.ListaProdutosAdapter
 import com.nevesrafael.anacosmeticos.databinding.ActivityListaProdutosBinding
-import com.nevesrafael.anacosmeticos.model.Produto
 
 class ListaProdutosActivity : AppCompatActivity() {
 

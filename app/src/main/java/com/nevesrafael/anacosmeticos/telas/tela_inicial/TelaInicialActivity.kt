@@ -1,8 +1,9 @@
-package com.nevesrafael.anacosmeticos
+package com.nevesrafael.anacosmeticos.telas.tela_inicial
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.nevesrafael.anacosmeticos.telas.lista_produtos.ListaProdutosActivity
 import com.nevesrafael.anacosmeticos.databinding.ActivityTelaInicialBinding
 
 class TelaInicialActivity : AppCompatActivity() {

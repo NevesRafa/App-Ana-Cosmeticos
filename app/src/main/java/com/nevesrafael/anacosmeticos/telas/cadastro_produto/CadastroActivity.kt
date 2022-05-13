@@ -1,11 +1,11 @@
-package com.nevesrafael.anacosmeticos
+package com.nevesrafael.anacosmeticos.telas.cadastro_produto
 
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.nevesrafael.anacosmeticos.dao.ProdutoDao
 import com.nevesrafael.anacosmeticos.databinding.ActivityCadastroBinding
-import com.nevesrafael.anacosmeticos.dialog.FormularioImagemDialog
 import com.nevesrafael.anacosmeticos.extensions.tentaCarregarImagem
 import com.nevesrafael.anacosmeticos.model.Produto
 
@@ -21,6 +21,7 @@ class CadastroActivity : AppCompatActivity() {
         binding = ActivityCadastroBinding.inflate(layoutInflater)
         setContentView(binding.root)
         configuraBotaoSalvar()
+        configuraMenuCategoria()
 
         binding.cadastroImagem.setOnClickListener {
             FormularioImagemDialog(this).mostra(
@@ -32,6 +33,12 @@ class CadastroActivity : AppCompatActivity() {
             )
         }
 
+    }
+
+    private fun configuraMenuCategoria() {
+        val items = listOf("Perfume", "Desodorante", "Creme de Corpo", "Creme para mãos")
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, items)
+        binding.categoria.setAdapter(adapter)
     }
 
     private fun configuraBotaoSalvar() {
@@ -69,8 +76,6 @@ class CadastroActivity : AppCompatActivity() {
             valorVendaRs = valorVendaRs,
             valorVendaY = valorVendaY,
             imagem = url
-
-
         )
     }
 }

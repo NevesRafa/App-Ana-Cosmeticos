@@ -1,4 +1,4 @@
-package com.nevesrafael.anacosmeticos.dialog
+package com.nevesrafael.anacosmeticos.telas.cadastro_produto
 
 import android.app.AlertDialog
 import android.content.Context
