@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.nevesrafael.anacosmeticos.dao.CategoriaDao
 import com.nevesrafael.anacosmeticos.dao.ProdutoDao
 import com.nevesrafael.anacosmeticos.databinding.ActivityCadastroBinding
 import com.nevesrafael.anacosmeticos.extensions.tentaCarregarImagem
@@ -13,8 +14,10 @@ class CadastroActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCadastroBinding
     private var url: String? = null
-    private val dao =
+    private val produtoDao =
         ProdutoDao() // deixa o dao como instância da classe pq vc nunca sabe se vai ter outro método pra usar!
+    private val categoriaDao =
+        CategoriaDao()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,18 +36,27 @@ class CadastroActivity : AppCompatActivity() {
             )
         }
 
+        binding.fabCategoria.setOnClickListener {
+            AdicionaCategoriaDialog(this).mostraDialogCategoria {
+                configuraMenuCategoria()
+            }
+        }
     }
 
     private fun configuraMenuCategoria() {
-        val items = listOf("Perfume", "Desodorante", "Creme de Corpo", "Creme para mãos")
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, items)
+        val listaCategoria = categoriaDao.buscaTodos()
+        val listaCategoriaComoString =
+            listaCategoria.map { categoria -> categoria.descricao }  // transforma a lista em uma lista de string atreves do map
+
+        val adapter =
+            ArrayAdapter(this, android.R.layout.simple_list_item_1, listaCategoriaComoString)
         binding.categoria.setAdapter(adapter)
     }
 
     private fun configuraBotaoSalvar() {
         binding.botaoSalvar.setOnClickListener {
             val produtoNovo = criaProduto()
-            dao.adiciona(produtoNovo)
+            produtoDao.adiciona(produtoNovo)
             finish()
         }
     }

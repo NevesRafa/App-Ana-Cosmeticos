@@ -36,7 +36,8 @@ class ListaProdutosAdapter(
     fun atualiza(produtos: List<Produto>) {
         this.produtos.clear()
         this.produtos.addAll(produtos)
-        notifyDataSetChanged()
+        notifyDataSetChanged() // notifica a lista (recyclerView) que a base de dados foi alterada e que eh pra ele reconstruir a listanotify - notifica, dataset - conjunto de dados,  changed - mudou
+
     }
 
 }
