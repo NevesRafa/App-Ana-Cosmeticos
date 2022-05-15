@@ -5,6 +5,7 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.nevesrafael.anacosmeticos.dao.CategoriaDao
+import com.nevesrafael.anacosmeticos.dao.FabricanteDao
 import com.nevesrafael.anacosmeticos.dao.ProdutoDao
 import com.nevesrafael.anacosmeticos.databinding.ActivityCadastroBinding
 import com.nevesrafael.anacosmeticos.extensions.tentaCarregarImagem
@@ -18,6 +19,8 @@ class CadastroActivity : AppCompatActivity() {
         ProdutoDao() // deixa o dao como instância da classe pq vc nunca sabe se vai ter outro método pra usar!
     private val categoriaDao =
         CategoriaDao()
+    private val fabricanteDao =
+        FabricanteDao()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +28,7 @@ class CadastroActivity : AppCompatActivity() {
         setContentView(binding.root)
         configuraBotaoSalvar()
         configuraMenuCategoria()
+        configuraMenuFabricante()
 
         binding.cadastroImagem.setOnClickListener {
             FormularioImagemDialog(this).mostra(
@@ -41,16 +45,31 @@ class CadastroActivity : AppCompatActivity() {
                 configuraMenuCategoria()
             }
         }
+
+        binding.fabFabricante.setOnClickListener {
+            AdicionaFabricanteDialog(this).mostraDialogFabricante {
+                configuraMenuFabricante()
+            }
+        }
     }
 
     private fun configuraMenuCategoria() {
         val listaCategoria = categoriaDao.buscaTodos()
         val listaCategoriaComoString =
             listaCategoria.map { categoria -> categoria.descricao }  // transforma a lista em uma lista de string atreves do map
-
         val adapter =
             ArrayAdapter(this, android.R.layout.simple_list_item_1, listaCategoriaComoString)
         binding.categoria.setAdapter(adapter)
+    }
+
+    private fun configuraMenuFabricante() {
+        val listaFabricante = fabricanteDao.buscaTodos()
+        val listaFabricanteComoString =
+            listaFabricante.map { fabricante -> fabricante.empresa }
+        val adapter =
+            ArrayAdapter(this,android.R.layout.simple_list_item_1,listaFabricanteComoString)
+        binding.fabricante.setAdapter(adapter)
+
     }
 
     private fun configuraBotaoSalvar() {

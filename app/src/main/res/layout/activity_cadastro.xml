@@ -38,7 +38,6 @@
                 android:id="@+id/nome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_alternates"
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -63,7 +62,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_text_fabricante"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -72,11 +71,10 @@
             app:layout_constraintStart_toStartOf="@id/input_text_categoria"
             app:layout_constraintTop_toBottomOf="@id/input_text_categoria">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <AutoCompleteTextView
                 android:id="@+id/fabricante"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_alternates"
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -98,7 +96,6 @@
                 android:id="@+id/und_medida"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_alternates"
                 android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -118,7 +115,6 @@
                 android:id="@+id/quantidade"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_alternates"
                 android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -139,8 +135,7 @@
                 android:id="@+id/valor_compra"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_alternates"
-                android:inputType="number" />
+                android:inputType="numberDecimal" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -159,8 +154,7 @@
                 android:id="@+id/valor_venda_rs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_alternates"
-                android:inputType="number" />
+                android:inputType="numberDecimal" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -179,7 +173,6 @@
                 android:id="@+id/valor_venda_iene"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_alternates"
                 android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -200,8 +193,8 @@
             android:id="@+id/fab_categoria"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:fabSize="mini"
             android:layout_marginEnd="16dp"
+            app:fabSize="mini"
             app:layout_constraintBottom_toTopOf="@id/input_text_fabricante"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/input_text_categoria"
@@ -212,8 +205,8 @@
             android:id="@+id/fab_fabricante"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:fabSize="mini"
             android:layout_marginEnd="16dp"
+            app:fabSize="mini"
             app:layout_constraintBottom_toTopOf="@id/input_text_und_medida"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/input_text_fabricante"
