@@ -82,33 +82,72 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_text_und_medida"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:hint="Unidade de medida"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:hint="Und. de medida"
+            app:layout_constraintBottom_toTopOf="@id/input_text_quantidade"
+            app:layout_constraintEnd_toStartOf="@+id/radio_group"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@id/input_text_fabricante"
             app:layout_constraintTop_toBottomOf="@id/input_text_fabricante">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/und_medida"
-                android:layout_width="match_parent"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/input_text_quantidade"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/input_text_und_medida"
+            app:layout_constraintTop_toBottomOf="@id/input_text_fabricante">
+
+            <RadioButton
+                android:id="@+id/radio_ml"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ml" />
+
+            <RadioButton
+                android:id="@+id/radio_g"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="g" />
+
+            <RadioButton
+                android:id="@+id/radio_kg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kg" />
+
+            <RadioButton
+                android:id="@+id/radio_l"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="L" />
+        </RadioGroup>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_text_quantidade"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
             android:hint="Quantidade"
-            app:layout_constraintEnd_toEndOf="@id/input_text_und_medida"
-            app:layout_constraintStart_toStartOf="@id/input_text_und_medida"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/input_text_und_medida">
 
             <com.google.android.material.textfield.TextInputEditText

@@ -3,7 +3,9 @@ package com.nevesrafael.anacosmeticos.telas.cadastro_produto
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.nevesrafael.anacosmeticos.R
 import com.nevesrafael.anacosmeticos.dao.CategoriaDao
 import com.nevesrafael.anacosmeticos.dao.FabricanteDao
 import com.nevesrafael.anacosmeticos.dao.ProdutoDao
@@ -29,6 +31,8 @@ class CadastroActivity : AppCompatActivity() {
         configuraBotaoSalvar()
         configuraMenuCategoria()
         configuraMenuFabricante()
+        configuraRadioButton()
+
 
         binding.cadastroImagem.setOnClickListener {
             FormularioImagemDialog(this).mostra(
@@ -53,6 +57,26 @@ class CadastroActivity : AppCompatActivity() {
         }
     }
 
+    private fun configuraRadioButton() {
+
+        binding.radioGroup.setOnCheckedChangeListener { group, checkedId ->
+
+            if (R.id.radio_ml == checkedId) {
+                Toast.makeText(this, "aeeeeeeee", Toast.LENGTH_SHORT).show()
+            }
+            if (R.id.radio_g == checkedId) {
+                Toast.makeText(this, "aeeeeeeee", Toast.LENGTH_SHORT).show()
+            }
+            if (R.id.radio_kg == checkedId) {
+                Toast.makeText(this, "aeeeeeeee", Toast.LENGTH_SHORT).show()
+            }
+            if (R.id.radio_l == checkedId) {
+                Toast.makeText(this, "aeeeeeeee", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+    }
+
     private fun configuraMenuCategoria() {
         val listaCategoria = categoriaDao.buscaTodos()
         val listaCategoriaComoString =
@@ -67,7 +91,7 @@ class CadastroActivity : AppCompatActivity() {
         val listaFabricanteComoString =
             listaFabricante.map { fabricante -> fabricante.empresa }
         val adapter =
-            ArrayAdapter(this,android.R.layout.simple_list_item_1,listaFabricanteComoString)
+            ArrayAdapter(this, android.R.layout.simple_list_item_1, listaFabricanteComoString)
         binding.fabricante.setAdapter(adapter)
 
     }
