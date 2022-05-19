@@ -11,9 +11,6 @@
         android:layout_height="wrap_content">
 
 
-
-
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/add_seletor_input_text"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -32,6 +29,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Nome"
                 android:inputType="textUri" />
+
 
         </com.google.android.material.textfield.TextInputLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

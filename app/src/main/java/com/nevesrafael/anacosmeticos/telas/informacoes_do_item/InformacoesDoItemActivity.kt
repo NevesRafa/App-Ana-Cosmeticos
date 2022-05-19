@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.nevesrafael.anacosmeticos.databinding.ActivityInformacoesDoItemBinding
 import com.nevesrafael.anacosmeticos.extensions.tentaCarregarImagem
 import com.nevesrafael.anacosmeticos.model.Produto
+import com.nevesrafael.anacosmeticos.model.TipoUnidadeMedida
 import com.nevesrafael.anacosmeticos.utilidades.formataParaMoedaBrasileira
 import com.nevesrafael.anacosmeticos.utilidades.formataParaMoedaJaponesa
 
@@ -37,12 +38,40 @@ class InformacoesDoItemActivity : AppCompatActivity() {
             binding.detalhesNome.text = produto.nome
             binding.detalhesCategoria.setText(produto.categoria, TextView.BufferType.EDITABLE)
             binding.detalhesFabricante.setText(produto.fabricante, TextView.BufferType.EDITABLE)
-            binding.detalhesQuantidade.setText(produto.quantidade.toString(), TextView.BufferType.EDITABLE)
-            binding.detalhesUndMedida.setText(produto.undMedida.toString(), TextView.BufferType.EDITABLE)
-            binding.detalhesValorCompra.setText(formataParaMoedaBrasileira(produto.valorCompra), TextView.BufferType.EDITABLE)
-            binding.detalhesValorVendaReais.setText(formataParaMoedaBrasileira(produto.valorVendaRs), TextView.BufferType.EDITABLE)
-            binding.detalhesValorVendaIene.setText(produto.valorVendaY.formataParaMoedaJaponesa(), TextView.BufferType.EDITABLE)
+            binding.detalhesQuantidade.setText(
+                produto.quantidade.toString(),
+                TextView.BufferType.EDITABLE
+            )
+            binding.detalhesValorCompra.setText(
+                formataParaMoedaBrasileira(produto.valorCompra),
+                TextView.BufferType.EDITABLE
+            )
+            binding.detalhesValorVendaReais.setText(
+                formataParaMoedaBrasileira(produto.valorVendaRs),
+                TextView.BufferType.EDITABLE
+            )
+            binding.detalhesValorVendaIene.setText(
+                produto.valorVendaY.formataParaMoedaJaponesa(),
+                TextView.BufferType.EDITABLE
+            )
             binding.detalhesImagem.tentaCarregarImagem(produto.imagem)
+            preencheUnidadeDeMedida(produto.tipoUndMedida, produto.undMedida)
         }
+    }
+
+    private fun preencheUnidadeDeMedida(tipo: Int, quantidade: Int) {
+        var nomenclatura = ""
+
+        if (tipo == TipoUnidadeMedida.KG) {
+            nomenclatura = "kg"
+        } else if (tipo == TipoUnidadeMedida.ML) {
+            nomenclatura = "ml"
+        } else if (tipo == TipoUnidadeMedida.G) {
+            nomenclatura = "g"
+        } else {
+            nomenclatura = "L"
+        }
+
+        binding.detalhesUndMedida.setText("$quantidade$nomenclatura", TextView.BufferType.EDITABLE)
     }
 }

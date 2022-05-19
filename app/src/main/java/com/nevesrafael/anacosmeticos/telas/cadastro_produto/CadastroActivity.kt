@@ -1,9 +1,9 @@
 package com.nevesrafael.anacosmeticos.telas.cadastro_produto
 
 import android.os.Bundle
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.nevesrafael.anacosmeticos.R
 import com.nevesrafael.anacosmeticos.dao.CategoriaDao
@@ -12,6 +12,7 @@ import com.nevesrafael.anacosmeticos.dao.ProdutoDao
 import com.nevesrafael.anacosmeticos.databinding.ActivityCadastroBinding
 import com.nevesrafael.anacosmeticos.extensions.tentaCarregarImagem
 import com.nevesrafael.anacosmeticos.model.Produto
+import com.nevesrafael.anacosmeticos.model.TipoUnidadeMedida
 
 class CadastroActivity : AppCompatActivity() {
 
@@ -31,8 +32,6 @@ class CadastroActivity : AppCompatActivity() {
         configuraBotaoSalvar()
         configuraMenuCategoria()
         configuraMenuFabricante()
-        configuraRadioButton()
-
 
         binding.cadastroImagem.setOnClickListener {
             FormularioImagemDialog(this).mostra(
@@ -55,26 +54,6 @@ class CadastroActivity : AppCompatActivity() {
                 configuraMenuFabricante()
             }
         }
-    }
-
-    private fun configuraRadioButton() {
-
-        binding.radioGroup.setOnCheckedChangeListener { group, checkedId ->
-
-            if (R.id.radio_ml == checkedId) {
-                Toast.makeText(this, "aeeeeeeee", Toast.LENGTH_SHORT).show()
-            }
-            if (R.id.radio_g == checkedId) {
-                Toast.makeText(this, "aeeeeeeee", Toast.LENGTH_SHORT).show()
-            }
-            if (R.id.radio_kg == checkedId) {
-                Toast.makeText(this, "aeeeeeeee", Toast.LENGTH_SHORT).show()
-            }
-            if (R.id.radio_l == checkedId) {
-                Toast.makeText(this, "aeeeeeeee", Toast.LENGTH_SHORT).show()
-            }
-        }
-
     }
 
     private fun configuraMenuCategoria() {
@@ -114,17 +93,18 @@ class CadastroActivity : AppCompatActivity() {
         val nome = pegaCampoComoString(binding.nome)
         val categoria = pegaCampoComoString(binding.categoria)
         val fabricante = pegaCampoComoString(binding.fabricante)
+        val tipoUndMedida = pegaUnidadeMedida()
         val undMedida = pegaCampoComoInt(binding.undMedida)
         val quantidade = pegaCampoComoInt(binding.quantidade)
         val valorCompra = pegaCampoComoDouble(binding.valorCompra)
         val valorVendaRs = pegaCampoComoDouble(binding.valorVendaRs)
         val valorVendaY = pegaCampoComoInt(binding.valorVendaIene)
 
-
         return Produto(
             nome = nome,
             categoria = categoria,
             fabricante = fabricante,
+            tipoUndMedida = tipoUndMedida,
             undMedida = undMedida,
             quantidade = quantidade,
             valorCompra = valorCompra,
@@ -132,5 +112,19 @@ class CadastroActivity : AppCompatActivity() {
             valorVendaY = valorVendaY,
             imagem = url
         )
+    }
+
+    private fun pegaUnidadeMedida(): Int {
+        val radioSelecionado = binding.radioGroup.checkedRadioButtonId
+
+        val unidadeMedida = when (radioSelecionado) {
+            R.id.radio_g -> TipoUnidadeMedida.G
+            R.id.radio_ml -> TipoUnidadeMedida.ML
+            R.id.radio_kg -> TipoUnidadeMedida.KG
+            R.id.radio_l -> TipoUnidadeMedida.L
+            else -> -1
+        }
+
+        return unidadeMedida
     }
 }
