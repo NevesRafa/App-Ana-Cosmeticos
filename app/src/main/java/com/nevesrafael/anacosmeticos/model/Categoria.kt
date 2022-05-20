@@ -1,3 +1,10 @@
 package com.nevesrafael.anacosmeticos.model
 
-class Categoria(val descricao: String)
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
+data class Categoria(
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    val descricao: String
+)

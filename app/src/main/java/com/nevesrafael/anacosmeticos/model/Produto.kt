@@ -8,7 +8,7 @@ import kotlinx.parcelize.Parcelize
 @Entity  // Define uma entidade de dados *Produto*, cada instância de *Produto* representa uma linha em uma tabela *Produto* no banco de dados do App.
 @Parcelize
 data class Produto(
-    @PrimaryKey (autoGenerate = true) val id: Int = 0, // Duvida??? (No curso o professor usou long, posso usar int???)
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val nome: String,
     val categoria: String,
     val quantidade: Int,

@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-parcelize'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -50,10 +51,7 @@ dependencies {
     implementation "io.coil-kt:coil:2.0.0-rc03"
     implementation("io.coil-kt:coil-gif:2.0.0-rc03")
 
-
-    def room_version = "2.4.1"
-
     implementation "androidx.room:room-runtime:2.4.2"
-    annotationProcessor "androidx.room:room-compiler:2.4.2"
+    kapt "androidx.room:room-compiler:2.4.2"
 
 }

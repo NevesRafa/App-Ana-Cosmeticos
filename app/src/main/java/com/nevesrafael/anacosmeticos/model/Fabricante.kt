@@ -1,4 +1,10 @@
 package com.nevesrafael.anacosmeticos.model
 
-class Fabricante(val empresa: String) {
-}
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
+data class Fabricante(
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    val empresa: String
+)

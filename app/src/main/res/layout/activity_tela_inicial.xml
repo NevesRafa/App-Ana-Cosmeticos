@@ -8,12 +8,12 @@
     tools:context=".telas.tela_inicial.TelaInicialActivity">
 
     <Button
-        android:id="@+id/botaoCadastra"
+        android:id="@+id/botao_lista_produtos"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Cadastra produtos"
-        app:layout_constraintBottom_toTopOf="@id/botaoListaCaixa"
+        android:text="Lista produtos"
+        app:layout_constraintBottom_toTopOf="@id/botao_lista_caixa"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -21,14 +21,14 @@
 
 
     <Button
-        android:id="@+id/botaoListaCaixa"
+        android:id="@+id/botao_lista_caixa"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Lista de Caixas"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/botaoCadastra"
-        app:layout_constraintStart_toStartOf="@id/botaoCadastra"
-        app:layout_constraintTop_toBottomOf="@id/botaoCadastra" />
+        app:layout_constraintEnd_toEndOf="@id/botao_lista_produtos"
+        app:layout_constraintStart_toStartOf="@id/botao_lista_produtos"
+        app:layout_constraintTop_toBottomOf="@id/botao_lista_produtos" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
