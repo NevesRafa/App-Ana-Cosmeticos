@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFCFD9"
-    tools:context=".AddFabricante">
+    tools:context=".telas.menu_cadastra.AddFabricante">
 
     <ImageView
         android:id="@+id/add_fabricante_imagem"

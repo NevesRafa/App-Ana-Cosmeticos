@@ -1,4 +1,4 @@
-package com.nevesrafael.anacosmeticos
+package com.nevesrafael.anacosmeticos.telas.menu_cadastra
 
 import android.content.Intent
 import android.os.Bundle

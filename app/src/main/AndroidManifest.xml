@@ -11,13 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AnaCosmeticos">
         <activity
-            android:name=".AddFabricante"
+            android:name=".telas.menu_cadastra.AddFabricante"
             android:exported="false" />
         <activity
-            android:name=".AddCategoria"
+            android:name=".telas.menu_cadastra.AddCategoria"
             android:exported="false" />
         <activity
-            android:name=".MenuCadastra"
+            android:name=".telas.menu_cadastra.MenuCadastra"
             android:exported="false" />
         <activity
             android:name=".telas.informacoes_do_item.InformacoesDoItemActivity"
