@@ -1,7 +1,6 @@
 package com.nevesrafael.anacosmeticos.telas.cadastro_produto
 
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.nevesrafael.anacosmeticos.R
@@ -36,8 +35,6 @@ class CadastroActivity : AppCompatActivity() {
         fabricanteDao = AppDatabase.instancia(this).fabricanteDao()
         setContentView(binding.root)
         configuraBotaoSalvar()
-        configuraMenuCategoria()
-        configuraMenuFabricante()
         tentaCarregarProduto()
 
         binding.cadastroImagem.setOnClickListener {
@@ -50,17 +47,6 @@ class CadastroActivity : AppCompatActivity() {
             )
         }
 
-        binding.fabCategoria.setOnClickListener {
-            AdicionaCategoriaDialog(this).mostraDialogCategoria {
-                configuraMenuCategoria()
-            }
-        }
-
-        binding.fabFabricante.setOnClickListener {
-            AdicionaFabricanteDialog(this).mostraDialogFabricante {
-                configuraMenuFabricante()
-            }
-        }
     }
 
     private fun tentaCarregarProduto() {
@@ -161,23 +147,5 @@ class CadastroActivity : AppCompatActivity() {
         return unidadeMedida
     }
 
-    private fun configuraMenuCategoria() {
-        val listaCategoria = categoriaDao.buscarTodos()
-        val listaCategoriaComoString =
-            listaCategoria.map { categoria -> categoria.descricao }  // transforma a lista em uma lista de string atreves do map
-        val adapter =
-            ArrayAdapter(this, android.R.layout.simple_list_item_1, listaCategoriaComoString)
-        binding.categoria.setAdapter(adapter)
-    }
-
-    private fun configuraMenuFabricante() {
-        val listaFabricante = fabricanteDao.buscarTodos()
-        val listaFabricanteComoString =
-            listaFabricante.map { fabricante -> fabricante.empresa }
-        val adapter =
-            ArrayAdapter(this, android.R.layout.simple_list_item_1, listaFabricanteComoString)
-        binding.fabricante.setAdapter(adapter)
-
-    }
 
 }

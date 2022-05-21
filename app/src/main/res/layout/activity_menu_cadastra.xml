@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFCFD9"
+    tools:context=".MenuCadastra">
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_novo_produto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="Novo Produto"
+        android:textAlignment="center"
+        app:icon="@drawable/add_button"
+        app:iconGravity="textStart"
+        app:layout_constraintBottom_toTopOf="@id/fab_nova_categoria"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlHardcoded" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_nova_categoria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="Nova Categoria"
+        android:textAlignment="center"
+        app:icon="@drawable/add_button"
+        app:iconGravity="textStart"
+        app:layout_constraintBottom_toTopOf="@id/fab_novo_fabricante"
+        app:layout_constraintEnd_toEndOf="@id/fab_novo_produto"
+        app:layout_constraintStart_toStartOf="@id/fab_novo_produto"
+        app:layout_constraintTop_toBottomOf="@id/fab_novo_produto"
+        tools:ignore="RtlHardcoded" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_novo_fabricante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="Novo fabricante"
+        android:textAlignment="center"
+        app:icon="@drawable/add_button"
+        app:iconGravity="textStart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/fab_nova_categoria"
+        app:layout_constraintStart_toStartOf="@id/fab_nova_categoria"
+        app:layout_constraintTop_toBottomOf="@id/fab_nova_categoria"
+        tools:ignore="RtlHardcoded" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

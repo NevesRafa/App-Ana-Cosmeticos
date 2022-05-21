@@ -49,8 +49,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:hint="Categoria"
-            app:layout_constraintEnd_toStartOf="@id/fab_categoria"
             app:layout_constraintStart_toStartOf="@id/input_text_nome"
+            app:layout_constraintBottom_toTopOf="@id/input_text_fabricante"
+            app:layout_constraintEnd_toEndOf="@id/input_text_nome"
             app:layout_constraintTop_toBottomOf="@id/input_text_nome">
 
             <AutoCompleteTextView
@@ -229,29 +230,29 @@
             app:layout_constraintTop_toBottomOf="@id/input_text_venda_iene"
             app:layout_constraintVertical_bias="1" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_categoria"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            app:fabSize="mini"
-            app:layout_constraintBottom_toTopOf="@id/input_text_fabricante"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/input_text_categoria"
-            app:layout_constraintTop_toBottomOf="@id/input_text_nome"
-            app:srcCompat="@drawable/add_button" />
+        <!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+        <!--            android:id="@+id/fab_categoria"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginEnd="16dp"-->
+        <!--            app:fabSize="mini"-->
+        <!--            app:layout_constraintBottom_toTopOf="@id/input_text_fabricante"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toEndOf="@id/input_text_categoria"-->
+        <!--            app:layout_constraintTop_toBottomOf="@id/input_text_nome"-->
+        <!--            app:srcCompat="@drawable/add_button" />-->
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_fabricante"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            app:fabSize="mini"
-            app:layout_constraintBottom_toTopOf="@id/input_text_und_medida"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/input_text_fabricante"
-            app:layout_constraintTop_toBottomOf="@id/input_text_categoria"
-            app:srcCompat="@drawable/add_button" />
+        <!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+        <!--            android:id="@+id/fab_fabricante"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginEnd="16dp"-->
+        <!--            app:fabSize="mini"-->
+        <!--            app:layout_constraintBottom_toTopOf="@id/input_text_und_medida"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toEndOf="@id/input_text_fabricante"-->
+        <!--            app:layout_constraintTop_toBottomOf="@id/input_text_categoria"-->
+        <!--            app:srcCompat="@drawable/add_button" />-->
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

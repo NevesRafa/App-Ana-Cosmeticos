@@ -21,19 +21,19 @@
 
     </androidx.recyclerview.widget.RecyclerView>
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_gravity="bottom|right"
-        android:clickable="true"
-        android:focusable="true"
-        android:text="Novo Produto"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:icon="@drawable/add_button"
-        tools:ignore="RtlHardcoded" />
+    <!--    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton-->
+    <!--        android:id="@+id/fab"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="16dp"-->
+    <!--        android:layout_gravity="bottom|right"-->
+    <!--        android:clickable="true"-->
+    <!--        android:focusable="true"-->
+    <!--        android:text="Novo Produto"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:icon="@drawable/add_button"-->
+    <!--        tools:ignore="RtlHardcoded" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

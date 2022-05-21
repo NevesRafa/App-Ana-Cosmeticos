@@ -8,7 +8,6 @@ import com.nevesrafael.anacosmeticos.database.AppDatabase
 import com.nevesrafael.anacosmeticos.database.ProdutoDao
 import com.nevesrafael.anacosmeticos.databinding.ActivityListaProdutosBinding
 import com.nevesrafael.anacosmeticos.recycleview.adapter.ListaProdutosAdapter
-import com.nevesrafael.anacosmeticos.telas.cadastro_produto.CadastroActivity
 import com.nevesrafael.anacosmeticos.telas.informacoes_do_item.InformacoesDoItemActivity
 
 class ListaProdutosActivity : AppCompatActivity() {
@@ -24,7 +23,7 @@ class ListaProdutosActivity : AppCompatActivity() {
         produtoDao = AppDatabase.instancia(this).produtoDao()
         setContentView(binding.root)
         configuraRecyclerView()
-        configuraFab()
+
     }
 
     override fun onResume() {
@@ -49,10 +48,10 @@ class ListaProdutosActivity : AppCompatActivity() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
     }
 
-    private fun configuraFab() {
-        binding.fab.setOnClickListener {
-            val intent = Intent(this, CadastroActivity::class.java)
-            startActivity(intent)
-        }
-    }
+//    private fun configuraFab() {
+//        binding.fab.setOnClickListener {
+//            val intent = Intent(this, CadastroActivity::class.java)
+//            startActivity(intent)
+//        }
+//    }
 }
