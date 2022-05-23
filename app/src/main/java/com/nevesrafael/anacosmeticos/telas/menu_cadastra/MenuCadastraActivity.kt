@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.nevesrafael.anacosmeticos.databinding.ActivityMenuCadastraBinding
 import com.nevesrafael.anacosmeticos.telas.cadastro_produto.CadastroActivity
 
-class MenuCadastra : AppCompatActivity() {
+class MenuCadastraActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMenuCadastraBinding
 
@@ -17,21 +17,18 @@ class MenuCadastra : AppCompatActivity() {
         configuraBotaoNovoProduto()
         configuraBotaoNovaCategoria()
         configuraBotaoNovoFabricante()
-
-        title = "Cadastra"
-
     }
 
     private fun configuraBotaoNovoFabricante() {
         binding.fabNovoFabricante.setOnClickListener {
-            val intent = Intent(this, AddFabricante::class.java)
+            val intent = Intent(this, AddFabricanteActivity::class.java)
             startActivity(intent)
         }
     }
 
     private fun configuraBotaoNovaCategoria() {
         binding.fabNovaCategoria.setOnClickListener {
-            val intent = Intent(this, AddCategoria::class.java)
+            val intent = Intent(this, AddCategoriaActivity::class.java)
             startActivity(intent)
         }
     }

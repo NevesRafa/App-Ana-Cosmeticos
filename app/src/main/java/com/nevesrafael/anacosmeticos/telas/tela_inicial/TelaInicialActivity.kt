@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.nevesrafael.anacosmeticos.databinding.ActivityTelaInicialBinding
 import com.nevesrafael.anacosmeticos.telas.lista_produtos.ListaProdutosActivity
-import com.nevesrafael.anacosmeticos.telas.menu_cadastra.MenuCadastra
+import com.nevesrafael.anacosmeticos.telas.menu_cadastra.MenuCadastraActivity
 
 class TelaInicialActivity : AppCompatActivity() {
 
@@ -33,7 +33,7 @@ class TelaInicialActivity : AppCompatActivity() {
 
     private fun configuraBotaoCadastra() {
         binding.botaoCadastra.setOnClickListener {
-            val intent = Intent(this, MenuCadastra::class.java)
+            val intent = Intent(this, MenuCadastraActivity::class.java)
             startActivity(intent)
         }
     }

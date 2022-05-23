@@ -1,9 +1,6 @@
 package com.nevesrafael.anacosmeticos.database
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 import com.nevesrafael.anacosmeticos.model.Categoria
 
 @Dao
@@ -17,5 +14,8 @@ interface CategoriaDao {
 
     @Delete()
     fun remove(descricao: Categoria)
+
+    @Update()
+    fun altera(descricao: Categoria)
 
 }

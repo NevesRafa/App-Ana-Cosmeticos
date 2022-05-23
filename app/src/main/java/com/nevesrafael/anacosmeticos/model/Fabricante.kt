@@ -6,5 +6,5 @@ import androidx.room.PrimaryKey
 @Entity
 data class Fabricante(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
-    val empresa: String
+    var empresa: String
 )

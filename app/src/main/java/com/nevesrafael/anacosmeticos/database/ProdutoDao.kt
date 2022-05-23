@@ -22,4 +22,7 @@ interface ProdutoDao {
 
     @Delete
     fun remove(produto: Produto)
+
+//    @Query("SELECT * FROM Produto WHERE quantidade > 0")
+//    fun produtosComEstoque(): List<Produto>
 }

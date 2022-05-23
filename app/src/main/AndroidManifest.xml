@@ -11,17 +11,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AnaCosmeticos">
         <activity
-            android:name=".telas.menu_cadastra.AddFabricante"
-            android:exported="false" />
+            android:name=".telas.menu_cadastra.AddFabricanteActivity"
+            android:exported="false"
+            android:label="Novo Fabricante" />
         <activity
-            android:name=".telas.menu_cadastra.AddCategoria"
-            android:exported="false" />
+            android:name=".telas.menu_cadastra.AddCategoriaActivity"
+            android:exported="false"
+            android:label="Nova Categoria" />
         <activity
-            android:name=".telas.menu_cadastra.MenuCadastra"
-            android:exported="false" />
+            android:name=".telas.menu_cadastra.MenuCadastraActivity"
+            android:exported="false"
+            android:label="Menu Cadastra" />
         <activity
             android:name=".telas.informacoes_do_item.InformacoesDoItemActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Detalhes do Produto" />
         <activity
             android:name=".telas.cadastro_produto.CadastroActivity"
             android:label="Cadastra Produtos" />
@@ -31,7 +35,8 @@
             android:label="Lista de Produtos" />
         <activity
             android:name=".telas.tela_inicial.TelaInicialActivity"
-            android:exported="true">
+            android:exported="true"
+            android:label="Ana Cosméticos">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

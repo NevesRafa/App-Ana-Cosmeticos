@@ -35,7 +35,6 @@ class InformacoesDoItemActivity : AppCompatActivity() {
         binding = ActivityInformacoesDoItemBinding.inflate(layoutInflater)
         produtoDao = AppDatabase.instancia(this).produtoDao()
         setContentView(binding.root)
-        title = "Detalhes do Produto"
         produtoId = intent.getIntExtra(EXTRA_PRODUTO_RECEBIDO_ID, 0)
 
 //        supportActionBar?.hide() // some so com o titulo

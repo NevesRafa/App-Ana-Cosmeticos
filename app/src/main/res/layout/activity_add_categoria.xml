@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".telas.menu_cadastra.AddCategoria">
+        tools:context=".telas.menu_cadastra.AddCategoriaActivity">
 
         <ImageView
             android:id="@+id/add_categoria_imagem"
@@ -32,6 +32,7 @@
             android:layout_marginTop="80dp"
             android:layout_marginEnd="16dp"
             android:hint="Categoria"
+            app:endIconMode="clear_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/add_categoria_imagem">

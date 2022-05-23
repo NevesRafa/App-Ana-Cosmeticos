@@ -1,8 +1,6 @@
 package com.nevesrafael.anacosmeticos.database
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 import com.nevesrafael.anacosmeticos.model.Fabricante
 
 @Dao
@@ -13,4 +11,10 @@ interface FabricanteDao {
 
     @Insert()
     fun salvar(empresa: Fabricante)
+
+    @Delete()
+    fun remove(empresa: Fabricante)
+
+    @Update()
+    fun altera(empresa: Fabricante)
 }
