@@ -1,163 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFCFD9">
+    android:fillViewport="true">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="16dp"
-        app:layout_constraintBottom_toTopOf="@id/dados_caixa"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/produtos_enviados" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFCFD9">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_add_na_lista_envio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:fabSize="mini"
-        app:layout_constraintBottom_toBottomOf="@id/recycler_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/recycler_view"
-        app:srcCompat="@drawable/add_button" />
-
-    <TextView
-        android:id="@+id/dados_caixa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Dados da caixa"
-        android:textColor="#6B4950"
-        android:textSize="22dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/lista_envio_comprimento_input_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fab_add_na_lista_envio" />
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/lista_envio_comprimento_input_text"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:hint="Comprimento"
-        app:layout_constraintEnd_toStartOf="@id/text_view_1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dados_caixa">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/lista_envio_comprimento"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_produtos_enviados"
             android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toTopOf="@id/dados_caixa"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/produtos_enviados" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add_na_lista_envio"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal" />
-    </com.google.android.material.textfield.TextInputLayout>
+            app:fabSize="mini"
+            app:layout_constraintBottom_toBottomOf="@id/recycler_view_produtos_enviados"
+            app:layout_constraintEnd_toEndOf="@id/recycler_view_produtos_enviados"
+            app:layout_constraintTop_toBottomOf="@id/recycler_view_produtos_enviados"
+            app:srcCompat="@drawable/add_button" />
 
-    <TextView
-        android:id="@+id/text_view_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="X"
-        android:textSize="26dp"
-        app:layout_constraintBottom_toBottomOf="@id/lista_envio_comprimento_input_text"
-        app:layout_constraintEnd_toStartOf="@id/lista_envio_largura_input_text"
-        app:layout_constraintStart_toEndOf="@+id/lista_envio_comprimento_input_text"
-        app:layout_constraintTop_toTopOf="@id/lista_envio_comprimento_input_text" />
+        <TextView
+            android:id="@+id/dados_caixa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Dados da caixa"
+            android:textColor="#6B4950"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/recycler_view_caixas_envidas"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recycler_view_produtos_enviados" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/lista_envio_largura_input_text"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:hint="Largura"
-        app:layout_constraintBottom_toBottomOf="@id/lista_envio_comprimento_input_text"
-        app:layout_constraintEnd_toStartOf="@id/text_view_2"
-        app:layout_constraintStart_toEndOf="@id/text_view_1"
-        app:layout_constraintTop_toTopOf="@id/lista_envio_comprimento_input_text">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/lista_envio_largura"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_caixas_envidas"
             android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toTopOf="@id/cria_envio_transportadora_input_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dados_caixa"
+            tools:listitem="@layout/caixa_dimensao" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add_na_lista_caixa"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal" />
-    </com.google.android.material.textfield.TextInputLayout>
+            app:fabSize="mini"
+            app:layout_constraintBottom_toBottomOf="@id/recycler_view_caixas_envidas"
+            app:layout_constraintEnd_toEndOf="@id/recycler_view_caixas_envidas"
+            app:layout_constraintTop_toBottomOf="@id/recycler_view_caixas_envidas"
+            app:srcCompat="@drawable/add_button" />
 
-    <TextView
-        android:id="@+id/text_view_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="X"
-        android:textSize="26dp"
-        app:layout_constraintBottom_toBottomOf="@id/lista_envio_largura_input_text"
-        app:layout_constraintEnd_toStartOf="@id/lista_envio_altura_input_text"
-        app:layout_constraintStart_toEndOf="@+id/lista_envio_largura_input_text"
-        app:layout_constraintTop_toTopOf="@id/lista_envio_largura_input_text" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/lista_envio_altura_input_text"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Altura"
-        app:layout_constraintBottom_toBottomOf="@id/lista_envio_largura_input_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/text_view_2"
-        app:layout_constraintTop_toTopOf="@id/lista_envio_largura_input_text">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/lista_envio_altura"
-            android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cria_envio_transportadora_input_text"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Transportadora"
+            app:layout_constraintBottom_toTopOf="@id/cria_envio_valor_caixa_input_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recycler_view_caixas_envidas">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/lista_envio_peso_input_text"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Peso"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lista_envio_comprimento_input_text">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/caixa_transportadora"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/lista_peso_altura"
-            android:layout_width="match_parent"
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cria_envio_valor_caixa_input_text"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Valor Caixa"
+            app:layout_constraintBottom_toTopOf="@id/botao_salvar_caixa"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cria_envio_transportadora_input_text">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:background="@drawable/shape"
-        android:text="Salvar Caixa"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lista_envio_peso_input_text" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/caixa_valor_caixa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/botao_salvar_caixa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/shape"
+            android:text="Salvar Caixa"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cria_envio_valor_caixa_input_text" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

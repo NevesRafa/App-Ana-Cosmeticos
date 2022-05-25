@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFCFD9"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lista_envio_comprimento_input_text"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:hint="Comprimento"
+            app:layout_constraintEnd_toStartOf="@id/text_view_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/lista_envio_comprimento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/text_view_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="X"
+            android:textSize="26dp"
+            app:layout_constraintBottom_toBottomOf="@id/lista_envio_comprimento_input_text"
+            app:layout_constraintEnd_toStartOf="@id/lista_envio_largura_input_text"
+            app:layout_constraintStart_toEndOf="@+id/lista_envio_comprimento_input_text"
+            app:layout_constraintTop_toTopOf="@id/lista_envio_comprimento_input_text" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lista_envio_largura_input_text"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:hint="Largura"
+            app:layout_constraintBottom_toBottomOf="@id/lista_envio_comprimento_input_text"
+            app:layout_constraintEnd_toStartOf="@id/text_view_2"
+            app:layout_constraintStart_toEndOf="@id/text_view_1"
+            app:layout_constraintTop_toTopOf="@id/lista_envio_comprimento_input_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/lista_envio_largura"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/text_view_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="X"
+            android:textSize="26dp"
+            app:layout_constraintBottom_toBottomOf="@id/lista_envio_largura_input_text"
+            app:layout_constraintEnd_toStartOf="@id/lista_envio_altura_input_text"
+            app:layout_constraintStart_toEndOf="@+id/lista_envio_largura_input_text"
+            app:layout_constraintTop_toTopOf="@id/lista_envio_largura_input_text" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lista_envio_altura_input_text"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Altura"
+            app:layout_constraintBottom_toBottomOf="@id/lista_envio_largura_input_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/text_view_2"
+            app:layout_constraintTop_toTopOf="@id/lista_envio_largura_input_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/lista_envio_altura"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lista_envio_peso_input_text"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Peso"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lista_envio_comprimento_input_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/lista_peso_altura"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
