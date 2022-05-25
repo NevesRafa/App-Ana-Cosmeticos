@@ -11,6 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AnaCosmeticos">
         <activity
+            android:name=".telas.menu_envios.CriaEnvioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".telas.menu_envios.ListaEnviosActivity"
+            android:exported="false"
+            android:label="Lista de Envios (Japão)" />
+        <activity
             android:name=".telas.menu_cadastra.AddFabricanteActivity"
             android:exported="false"
             android:label="Novo Fabricante" />

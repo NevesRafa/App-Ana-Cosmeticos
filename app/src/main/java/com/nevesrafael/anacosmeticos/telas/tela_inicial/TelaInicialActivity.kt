@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.nevesrafael.anacosmeticos.databinding.ActivityTelaInicialBinding
 import com.nevesrafael.anacosmeticos.telas.lista_produtos.ListaProdutosActivity
 import com.nevesrafael.anacosmeticos.telas.menu_cadastra.MenuCadastraActivity
+import com.nevesrafael.anacosmeticos.telas.menu_envios.ListaEnviosActivity
 
 class TelaInicialActivity : AppCompatActivity() {
 
@@ -20,7 +21,7 @@ class TelaInicialActivity : AppCompatActivity() {
         setContentView(binding.root)
         configuraBotaoListaProdutos()
         configuraBotaoCadastra()
-        supportActionBar?.hide()
+        configuraBotaoEnvios()
 
 
         //Rodar somente na instalação do App para carregar categorias e fabricantes ja pre definidos
@@ -29,6 +30,13 @@ class TelaInicialActivity : AppCompatActivity() {
 //        carregaCategorias(categoriaDao)
 //        carregaFabricantes(fabricanteDao)
 
+    }
+
+    private fun configuraBotaoEnvios() {
+        binding.botaoListaEnvios.setOnClickListener {
+            val intent = Intent(this, ListaEnviosActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun configuraBotaoCadastra() {

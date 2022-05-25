@@ -25,20 +25,20 @@
         android:layout_width="180dp"
         android:layout_height="180dp"
         android:background="@drawable/shape_tela_inicial"
-        android:text="lista produtos"
+        android:text="lista produtos\n(Estoque)"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@id/botao_lista_caixa"
+        app:layout_constraintBottom_toTopOf="@id/botao_lista_envios"
         app:layout_constraintEnd_toEndOf="@id/botao_cadastra"
         app:layout_constraintStart_toStartOf="@id/botao_cadastra"
         app:layout_constraintTop_toBottomOf="@id/botao_cadastra" />
 
 
     <Button
-        android:id="@+id/botao_lista_caixa"
+        android:id="@+id/botao_lista_envios"
         android:layout_width="180dp"
         android:layout_height="180dp"
         android:background="@drawable/shape_tela_inicial"
-        android:text="Lista de Caixas"
+        android:text="Lista de Envios\n(Japão)"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/botao_lista_produtos"
