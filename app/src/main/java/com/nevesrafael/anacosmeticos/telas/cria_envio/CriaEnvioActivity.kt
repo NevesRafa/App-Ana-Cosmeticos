@@ -1,4 +1,4 @@
-package com.nevesrafael.anacosmeticos.telas.menu_envios
+package com.nevesrafael.anacosmeticos.telas.cria_envio
 
 import android.os.Bundle
 import android.text.SpannableString

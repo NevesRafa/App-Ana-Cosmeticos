@@ -1,10 +1,11 @@
-package com.nevesrafael.anacosmeticos.telas.menu_envios
+package com.nevesrafael.anacosmeticos.telas.lista_envios
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nevesrafael.anacosmeticos.databinding.ActivityListaEnviosBinding
+import com.nevesrafael.anacosmeticos.telas.cria_envio.CriaEnvioActivity
 
 class ListaEnviosActivity : AppCompatActivity() {
 
@@ -17,6 +18,10 @@ class ListaEnviosActivity : AppCompatActivity() {
         setContentView(binding.root)
         configuraFabNovoEnvio()
         configuraRecyclerView()
+    }
+
+    override fun onResume() {
+        super.onResume()
     }
 
     private fun configuraRecyclerView() {

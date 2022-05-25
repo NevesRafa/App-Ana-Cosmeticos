@@ -4,9 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.nevesrafael.anacosmeticos.databinding.ActivityTelaInicialBinding
+import com.nevesrafael.anacosmeticos.telas.lista_envios.ListaEnviosActivity
 import com.nevesrafael.anacosmeticos.telas.lista_produtos.ListaProdutosActivity
 import com.nevesrafael.anacosmeticos.telas.menu_cadastra.MenuCadastraActivity
-import com.nevesrafael.anacosmeticos.telas.menu_envios.ListaEnviosActivity
 
 class TelaInicialActivity : AppCompatActivity() {
 

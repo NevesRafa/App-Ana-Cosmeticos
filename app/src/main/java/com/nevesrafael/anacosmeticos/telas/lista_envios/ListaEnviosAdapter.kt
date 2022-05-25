@@ -1,4 +1,4 @@
-package com.nevesrafael.anacosmeticos.telas.menu_envios
+package com.nevesrafael.anacosmeticos.telas.lista_envios
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

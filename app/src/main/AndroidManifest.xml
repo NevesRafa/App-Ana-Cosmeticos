@@ -11,10 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AnaCosmeticos">
         <activity
-            android:name=".telas.menu_envios.CriaEnvioActivity"
+            android:name=".telas.cria_envio.CriaEnvioActivity"
             android:exported="false" />
         <activity
-            android:name=".telas.menu_envios.ListaEnviosActivity"
+            android:name=".telas.lista_envios.ListaEnviosActivity"
             android:exported="false"
             android:label="Lista de Envios (Japão)" />
         <activity
