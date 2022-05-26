@@ -1,10 +1,13 @@
 package com.nevesrafael.anacosmeticos.telas.cria_envio
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.UnderlineSpan
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.nevesrafael.anacosmeticos.EstoqueEnvioActivity
+import com.nevesrafael.anacosmeticos.FormularioCaixaDialog
 import com.nevesrafael.anacosmeticos.database.AppDatabase
 import com.nevesrafael.anacosmeticos.database.EnvioDao
 import com.nevesrafael.anacosmeticos.databinding.ActivityCriaEnvioBinding
@@ -28,8 +31,22 @@ class CriaEnvioActivity : AppCompatActivity() {
         binding.dadosCaixa.text = titulo
 
         configuraBotaoSalvar()
+        configuraFabProduto()
+        configuraFabCaixa()
 
+    }
 
+    private fun configuraFabCaixa() {
+        binding.fabAddNaListaCaixa.setOnClickListener {
+            FormularioCaixaDialog(this).mostra()
+        }
+    }
+
+    private fun configuraFabProduto() {
+        binding.fabAddNaListaEnvio.setOnClickListener {
+            val intent = Intent(this, EstoqueEnvioActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun configuraBotaoSalvar() {
