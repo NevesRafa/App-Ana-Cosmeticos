@@ -4,11 +4,9 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class Caixa(
+class ProdutoEnvio(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val envioId: Int,
-    val comprimento: Double,
-    val largura: Double,
-    val altura: Double,
-    val peso: Double
+    val produtoId: Int,
+    val quantidade: Int
 )

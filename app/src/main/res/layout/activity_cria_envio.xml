@@ -100,7 +100,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             android:hint="Valor Caixa"
-            app:layout_constraintBottom_toTopOf="@id/botao_salvar_caixa"
+            app:layout_constraintBottom_toTopOf="@id/cria_envio_data_input_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cria_envio_transportadora_input_text">
@@ -112,18 +112,39 @@
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cria_envio_data_input_text"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Data do envio"
+            app:layout_constraintBottom_toTopOf="@id/botao_salvar_caixa"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cria_envio_valor_caixa_input_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/caixa_data_caixa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date" />
+        </com.google.android.material.textfield.TextInputLayout>
+
         <Button
             android:id="@+id/botao_salvar_caixa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:background="@drawable/shape"
-            android:text="Salvar Caixa"
+            android:text="Salvar caixa"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cria_envio_valor_caixa_input_text" />
+            app:layout_constraintTop_toBottomOf="@id/cria_envio_data_input_text" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

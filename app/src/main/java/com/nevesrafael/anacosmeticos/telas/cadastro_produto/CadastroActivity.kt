@@ -71,7 +71,7 @@ class CadastroActivity : AppCompatActivity() {
     private fun preencheCampo(produtoCarregado: Produto) {
         url = produtoCarregado.imagem
         with(binding) {
-            cadastroImagem.tentaCarregarImagem(produtoCarregado.imagem) // não poderia ser URL????
+            cadastroImagem.tentaCarregarImagem(produtoCarregado.imagem)
             nome.setText(produtoCarregado.nome)
             categoria.setText(produtoCarregado.categoria)
             fabricante.setText(produtoCarregado.fabricante)

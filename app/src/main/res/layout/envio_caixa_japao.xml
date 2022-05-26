@@ -12,64 +12,43 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/caixa_imagem"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/caixa_data_envio"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.3"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
-
         <TextView
             android:id="@+id/caixa_data_envio"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:ellipsize="end"
-            android:fontFamily="@font/montserrat_alternates_bold"
-            android:maxLines="1"
-            android:textSize="20sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/caixa_imagem"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/caixa_transportadora"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Envio 19/05/2022" />
+            tools:text="19/05/2022" />
 
         <TextView
             android:id="@+id/caixa_transportadora"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:ellipsize="end"
-            android:fontFamily="@font/montserrat_alternates"
-            android:maxLines="1"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/caixa_imagem"
-            app:layout_constraintTop_toBottomOf="@id/caixa_data_envio"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/caixa_data_envio"
+            app:layout_constraintEnd_toStartOf="@id/caixa_valor_envio"
+            app:layout_constraintStart_toEndOf="@id/caixa_data_envio"
+            app:layout_constraintTop_toTopOf="@id/caixa_data_envio"
             tools:text="UPS" />
 
 
         <TextView
             android:id="@+id/caixa_valor_envio"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
             android:textColor="#880E4F"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/caixa_transportadora"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/caixa_imagem"
-            app:layout_constraintTop_toBottomOf="@id/caixa_transportadora"
+            app:layout_constraintStart_toEndOf="@id/caixa_transportadora"
+            app:layout_constraintTop_toTopOf="@id/caixa_transportadora"
             tools:text="¥20000" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
