@@ -15,12 +15,12 @@
 
         <TextView
             android:id="@+id/enviado_nome_produto"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:ellipsize="end"
             android:maxLines="1"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/enviado_descricao_produto"
@@ -35,7 +35,7 @@
             android:layout_marginStart="8dp"
             android:ellipsize="end"
             android:maxLines="1"
-            android:textSize="16sp"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/enviado_und_medida_produto"
             app:layout_constraintStart_toEndOf="@+id/enviado_nome_produto"
@@ -47,15 +47,25 @@
             android:id="@+id/enviado_und_medida_produto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:textSize="16sp"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/enviado_quantidade_produto"
             app:layout_constraintStart_toEndOf="@id/enviado_descricao_produto"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="100ml" />
+            tools:text="100" />
+
+
+        <TextView
+            android:id="@+id/enviado_tipo_und_medida_produto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/enviado_quantidade_produto"
+            app:layout_constraintStart_toEndOf="@id/enviado_und_medida_produto"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="ml" />
 
         <TextView
             android:id="@+id/enviado_quantidade_produto"
@@ -64,7 +74,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:textColor="#880E4F"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

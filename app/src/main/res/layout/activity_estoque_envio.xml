@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="#FFCFD9">
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="0dp"
@@ -16,9 +15,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/produtos_enviados">
-
-    </androidx.recyclerview.widget.RecyclerView>
-
-
+        tools:listitem="@layout/produtos_enviados" />
 </androidx.constraintlayout.widget.ConstraintLayout>

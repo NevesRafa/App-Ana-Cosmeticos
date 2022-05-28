@@ -24,7 +24,7 @@ class TelaInicialActivity : AppCompatActivity() {
         configuraBotaoEnvios()
 
 
-        //Rodar somente na instalação do App para carregar categorias e fabricantes ja pre definidos
+       // Rodar somente na instalação do App para carregar categorias e fabricantes ja pre definidos
 //        val categoriaDao = AppDatabase.instancia(this).categoriaDao()
 //        val fabricanteDao = AppDatabase.instancia(this).fabricanteDao()
 //        carregaCategorias(categoriaDao)

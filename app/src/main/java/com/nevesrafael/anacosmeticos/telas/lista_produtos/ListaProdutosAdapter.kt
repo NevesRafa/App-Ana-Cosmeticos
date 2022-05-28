@@ -1,4 +1,4 @@
-package com.nevesrafael.anacosmeticos.recycleview.adapter
+package com.nevesrafael.anacosmeticos.telas.lista_produtos
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -22,7 +22,7 @@ class ListaProdutosAdapter(
 
     override fun onBindViewHolder(holder: ListaProdutoViewHolder, position: Int) {
         val produto = produtos[position]
-        holder.vincula(produto, this.quandoClicaNoProduto)
+        holder.vincula(produto, quandoClicaNoProduto)
     }
 
 // jeito chato

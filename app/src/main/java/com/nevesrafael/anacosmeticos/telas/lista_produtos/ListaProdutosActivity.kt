@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.nevesrafael.anacosmeticos.database.AppDatabase
 import com.nevesrafael.anacosmeticos.database.ProdutoDao
 import com.nevesrafael.anacosmeticos.databinding.ActivityListaProdutosBinding
-import com.nevesrafael.anacosmeticos.recycleview.adapter.ListaProdutosAdapter
 import com.nevesrafael.anacosmeticos.telas.informacoes_do_item.InformacoesDoItemActivity
 
 class ListaProdutosActivity : AppCompatActivity() {

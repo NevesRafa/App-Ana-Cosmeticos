@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFCFD9"
-    tools:context=".recycleview.adapter.ListaProdutosAdapter">
+    tools:context=".telas.lista_produtos.ListaProdutosAdapter">
 
 
     <androidx.recyclerview.widget.RecyclerView
