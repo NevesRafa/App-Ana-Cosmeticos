@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AnaCosmeticos">
         <activity
-            android:name=".InformacoesDaCaixaActivity"
+            android:name=".telas.informacoes_da_caixa.InformacoesDaCaixaActivity"
             android:exported="false"
             android:label="Informações do Envio" />
         <activity

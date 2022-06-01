@@ -4,12 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.nevesrafael.anacosmeticos.InformacoesDaCaixaActivity
 import com.nevesrafael.anacosmeticos.database.AppDatabase
 import com.nevesrafael.anacosmeticos.database.EnvioDao
 import com.nevesrafael.anacosmeticos.databinding.ActivityListaEnviosBinding
 import com.nevesrafael.anacosmeticos.model.Caixa
 import com.nevesrafael.anacosmeticos.telas.cria_envio.CriaEnvioActivity
+import com.nevesrafael.anacosmeticos.telas.informacoes_da_caixa.InformacoesDaCaixaActivity
 
 class ListaEnviosActivity : AppCompatActivity() {
 

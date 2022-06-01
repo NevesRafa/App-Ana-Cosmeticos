@@ -8,7 +8,6 @@ import android.text.style.UnderlineSpan
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.nevesrafael.anacosmeticos.FormularioCaixaDialog
 import com.nevesrafael.anacosmeticos.database.AppDatabase
 import com.nevesrafael.anacosmeticos.database.EnvioDao
 import com.nevesrafael.anacosmeticos.databinding.ActivityCriaEnvioBinding

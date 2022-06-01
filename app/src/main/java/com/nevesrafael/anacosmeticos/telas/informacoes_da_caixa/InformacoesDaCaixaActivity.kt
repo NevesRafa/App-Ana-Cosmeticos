@@ -1,4 +1,4 @@
-package com.nevesrafael.anacosmeticos
+package com.nevesrafael.anacosmeticos.telas.informacoes_da_caixa
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

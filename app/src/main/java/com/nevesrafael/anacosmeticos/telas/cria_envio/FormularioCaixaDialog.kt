@@ -1,4 +1,4 @@
-package com.nevesrafael.anacosmeticos
+package com.nevesrafael.anacosmeticos.telas.cria_envio
 
 import android.app.AlertDialog
 import android.content.Context
