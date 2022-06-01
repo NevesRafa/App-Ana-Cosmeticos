@@ -11,7 +11,7 @@ data class Produto(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val nome: String,
     val categoria: String,
-    val quantidade: Int,
+    val estoque: Int,
     val fabricante: String,
     val tipoUndMedida: Int, // esse cara vai ser um dos tipos [TipoUnidadeMedida]
     val undMedida: Int,

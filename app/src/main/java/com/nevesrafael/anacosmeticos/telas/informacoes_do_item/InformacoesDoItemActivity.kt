@@ -57,7 +57,7 @@ class InformacoesDoItemActivity : AppCompatActivity() {
             binding.detalhesCategoria.setText(produto.categoria, TextView.BufferType.EDITABLE)
             binding.detalhesFabricante.setText(produto.fabricante, TextView.BufferType.EDITABLE)
             binding.detalhesQuantidade.setText(
-                produto.quantidade.toString(),
+                produto.estoque.toString(),
                 TextView.BufferType.EDITABLE
             )
             binding.detalhesValorCompra.setText(

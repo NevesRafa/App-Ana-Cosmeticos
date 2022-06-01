@@ -7,7 +7,9 @@ import com.nevesrafael.anacosmeticos.databinding.EnvioCaixaJapaoBinding
 import com.nevesrafael.anacosmeticos.model.Envio
 import com.nevesrafael.anacosmeticos.utilidades.formataParaMoedaJaponesa
 
-class ListaEnviosAdapter : RecyclerView.Adapter<ListaEnviosViewHolder>() {
+class ListaEnviosAdapter(
+    val quandoClicaNoEnvio: (Envio) -> Unit
+) : RecyclerView.Adapter<ListaEnviosViewHolder>() {
 
     private val envios = mutableListOf<Envio>()
 
@@ -19,7 +21,7 @@ class ListaEnviosAdapter : RecyclerView.Adapter<ListaEnviosViewHolder>() {
 
     override fun onBindViewHolder(holder: ListaEnviosViewHolder, position: Int) {
         val envio = envios[position]
-        holder.vincula(envio)
+        holder.vincula(envio, quandoClicaNoEnvio)
     }
 
     override fun getItemCount() = envios.size
@@ -37,20 +39,15 @@ class ListaEnviosAdapter : RecyclerView.Adapter<ListaEnviosViewHolder>() {
 class ListaEnviosViewHolder(val binding: EnvioCaixaJapaoBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
-    // pq seu metodo vincula espera uma lista de envios?
-    //nao precisa dele pra vincular os dados
-    // precisa, mas vc vai passar um por vez, cada item da sua lista é um ViewHolder diferente, vc precisa passar um Envio em cada
-    //assim?
-    // é zé. seu adapter precisa receber a lista toda
-    // mas seu viewholder é pra cada item da lista
-    //ahhhhhh
-
-    fun vincula(envio: Envio) {
+    fun vincula(envio: Envio, quandoClicaNoEnvio: (Envio) -> Unit) {
         binding.caixaTransportadora.text = envio.transportadora
         binding.caixaDataEnvio.text = envio.dataDoEnvio
         val valorEnvio = binding.caixaValorEnvio
         val valorEmMoeda = envio.valorEnvio.formataParaMoedaJaponesa()
         valorEnvio.text = valorEmMoeda
+
+        //click
+        binding.root.setOnClickListener { quandoClicaNoEnvio(envio) }
 
     }
 

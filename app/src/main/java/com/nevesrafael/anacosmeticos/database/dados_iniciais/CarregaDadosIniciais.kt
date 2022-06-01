@@ -2,8 +2,11 @@ package com.nevesrafael.anacosmeticos.database.dados_iniciais
 
 import com.nevesrafael.anacosmeticos.database.CategoriaDao
 import com.nevesrafael.anacosmeticos.database.FabricanteDao
+import com.nevesrafael.anacosmeticos.database.ProdutoDao
 import com.nevesrafael.anacosmeticos.model.Categoria
 import com.nevesrafael.anacosmeticos.model.Fabricante
+import com.nevesrafael.anacosmeticos.model.Produto
+import com.nevesrafael.anacosmeticos.model.TipoUnidadeMedida
 
 fun carregaCategorias(dao: CategoriaDao) {
 
@@ -37,4 +40,51 @@ fun carregaFabricantes(dao: FabricanteDao) {
     dao.salvar(Fabricante(empresa = "Natura"))
     dao.salvar(Fabricante(empresa = "Boticario"))
     dao.salvar(Fabricante(empresa = "Avon"))
+}
+
+fun carregaProdutos(dao: ProdutoDao) {
+
+    // da pra pegar umas img na internet
+    dao.salvar(
+        Produto(
+            0,
+            "Kaiak",
+            "Desodorante",
+            20,
+            "Natura",
+            TipoUnidadeMedida.ML,
+            100,
+            100.0,
+            150.0,
+            2000
+        )
+    )
+    dao.salvar(
+        Produto(
+            0,
+            "Kaiak",
+            "Desodorante",
+            20,
+            "Natura",
+            TipoUnidadeMedida.ML,
+            100,
+            100.0,
+            150.0,
+            2000
+        )
+    )
+    dao.salvar(
+        Produto(
+            0,
+            "Kaiak",
+            "Desodorante",
+            20,
+            "Natura",
+            TipoUnidadeMedida.ML,
+            100,
+            100.0,
+            150.0,
+            2000
+        )
+    )
 }

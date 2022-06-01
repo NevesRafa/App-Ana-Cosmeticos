@@ -38,7 +38,7 @@ class CriaEnvioCaixaViewHolder(val binding: CaixaDimensaoBinding) :
         binding.caixa.text = "Caixa ${position + 1}"
         binding.dimensoes.text =
             "Dimensões: ${caixa.comprimento} X ${caixa.largura} X ${caixa.altura}"
-        binding.peso.text = "Peso: ${caixa.peso}"
+        binding.peso.text = "Peso: ${caixa.peso}Kg"
     }
 
 }

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.nevesrafael.anacosmeticos.InformacoesDaCaixaActivity
 import com.nevesrafael.anacosmeticos.database.AppDatabase
 import com.nevesrafael.anacosmeticos.database.EnvioDao
 import com.nevesrafael.anacosmeticos.databinding.ActivityListaEnviosBinding
@@ -34,7 +35,12 @@ class ListaEnviosActivity : AppCompatActivity() {
 
     private fun configuraRecyclerView() {
 
-        adapter = ListaEnviosAdapter()
+        adapter = ListaEnviosAdapter(quandoClicaNoEnvio = { envio ->
+            val intent = Intent(
+                this,
+                InformacoesDaCaixaActivity::class.java
+            )//intent para abrir a tela informacões da caixa
+        })
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
     }

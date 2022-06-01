@@ -4,12 +4,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nevesrafael.anacosmeticos.databinding.ProdutosEnviadosBinding
-import com.nevesrafael.anacosmeticos.model.Produto
+import com.nevesrafael.anacosmeticos.model.ProdutoEnvio
 import com.nevesrafael.anacosmeticos.model.TipoUnidadeMedida
 
 class CriaEnvioProdutosAdapter : RecyclerView.Adapter<CriaEnvioProdutosViewHolder>() {
 
-    private val produtoEnvio = mutableListOf<Produto>()
+    private val produtoEnvio = mutableListOf<ProdutoEnvio>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CriaEnvioProdutosViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -24,7 +24,7 @@ class CriaEnvioProdutosAdapter : RecyclerView.Adapter<CriaEnvioProdutosViewHolde
 
     override fun getItemCount() = produtoEnvio.size
 
-    fun atualiza(produtos: List<Produto>) {
+    fun atualiza(produtos: List<ProdutoEnvio>) {
         this.produtoEnvio.clear()
         this.produtoEnvio.addAll(produtos)
         notifyDataSetChanged()
@@ -35,17 +35,17 @@ class CriaEnvioProdutosAdapter : RecyclerView.Adapter<CriaEnvioProdutosViewHolde
 class CriaEnvioProdutosViewHolder(val binding: ProdutosEnviadosBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
-    fun vincula(produto: Produto) {
-        binding.enviadoNomeProduto.text = produto.nome
-        binding.enviadoDescricaoProduto.text = produto.categoria
-        //binding.enviadoQuantidadeProduto.text = produto.quantidade.toString()
-        binding.enviadoUndMedidaProduto.text = produto.undMedida.toString()
+    fun vincula(produtoEnvio: ProdutoEnvio) {
+        binding.enviadoQuantidadeProduto.text = produtoEnvio.quantidade.toString()
+        binding.enviadoNomeProduto.text = produtoEnvio.produto?.nome
+        binding.enviadoDescricaoProduto.text = produtoEnvio.produto?.categoria
+        binding.enviadoUndMedidaProduto.text = produtoEnvio.produto?.undMedida.toString()
 
-        if (produto.tipoUndMedida == TipoUnidadeMedida.ML) {
+        if (produtoEnvio.produto?.tipoUndMedida == TipoUnidadeMedida.ML) {
             binding.enviadoTipoUndMedidaProduto.text = "ml"
-        } else if (produto.tipoUndMedida == TipoUnidadeMedida.G) {
+        } else if (produtoEnvio.produto?.tipoUndMedida == TipoUnidadeMedida.G) {
             binding.enviadoTipoUndMedidaProduto.text = "g"
-        } else if (produto.tipoUndMedida == TipoUnidadeMedida.KG) {
+        } else if (produtoEnvio.produto?.tipoUndMedida == TipoUnidadeMedida.KG) {
             binding.enviadoTipoUndMedidaProduto.text = "kg"
         } else {
             binding.enviadoTipoUndMedidaProduto.text = "L"

@@ -12,9 +12,6 @@ class FormularioCaixaDialog(private val context: Context) {
 
         val binding = FormularioCaixaBinding.inflate(LayoutInflater.from(context))
 
-
-
-
         AlertDialog.Builder(context)
             .setView(binding.root)
             .setPositiveButton("Salvar") { _, _ ->

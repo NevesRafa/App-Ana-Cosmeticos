@@ -1,14 +1,16 @@
 package com.nevesrafael.anacosmeticos.telas.estoque_envio
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nevesrafael.anacosmeticos.database.AppDatabase
 import com.nevesrafael.anacosmeticos.database.ProdutoDao
 import com.nevesrafael.anacosmeticos.databinding.ActivityEstoqueEnvioBinding
-import com.nevesrafael.anacosmeticos.model.Caixa
+import com.nevesrafael.anacosmeticos.databinding.DialogQuantidadeProdutoBinding
 import com.nevesrafael.anacosmeticos.model.Produto
 import com.nevesrafael.anacosmeticos.telas.cria_envio.CriaEnvioActivity
 
@@ -36,15 +38,26 @@ class EstoqueEnvioActivity : AppCompatActivity() {
 
     private fun configuraRecyclerViewProdutoEnvio() {
         adapter = EstoqueEnvioAdapter(quandoClicaNoProduto = { produtoClicado ->
-            //criar um dialog maroto
-
-            // quando clicar no sucesso do dialog
-
-//            mandaProdutoParaTelaCriaEnvio(produtoClicado, 20)
-
+            mostraDialogQuantidade(produtoClicado)
         })
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
+    }
+
+    private fun mostraDialogQuantidade(produtoClicado: Produto) {
+        val binding = DialogQuantidadeProdutoBinding.inflate(LayoutInflater.from(this))
+
+        AlertDialog.Builder(this)
+            .setView(binding.root)
+            .setPositiveButton("Confirmar") { _, _ ->
+                val quantidade = binding.quantidadeDialog.text.toString().toInt()
+
+                mandaProdutoParaTelaCriaEnvio(produtoClicado, quantidade)
+            }
+            .setNegativeButton("Cancelar") { _, _ ->
+
+            }
+            .show()
     }
 
 
@@ -62,16 +75,6 @@ class EstoqueEnvioActivity : AppCompatActivity() {
         setResult(Activity.RESULT_OK, intentPraRetornar)
 
         // finalizo a tela
-        finish()
-    }
-
-    private fun mandaCaixaParaTelaCriaEnvio(caixaParaEnviar: Caixa) {
-        val intentParaRetornar = Intent()
-        intentParaRetornar.putExtra(CriaEnvioActivity.EXTRA_CAIXA_ENVIO, caixaParaEnviar)
-
-
-        setResult(Activity.RESULT_OK, intentParaRetornar)
-
         finish()
     }
 }

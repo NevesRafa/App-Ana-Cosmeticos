@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AnaCosmeticos">
         <activity
+            android:name=".InformacoesDaCaixaActivity"
+            android:exported="false" />
+        <activity
             android:name=".telas.estoque_envio.EstoqueEnvioActivity"
             android:exported="false" />
         <activity

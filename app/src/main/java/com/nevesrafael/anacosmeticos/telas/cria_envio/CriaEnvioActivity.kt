@@ -15,6 +15,7 @@ import com.nevesrafael.anacosmeticos.databinding.ActivityCriaEnvioBinding
 import com.nevesrafael.anacosmeticos.model.Caixa
 import com.nevesrafael.anacosmeticos.model.Envio
 import com.nevesrafael.anacosmeticos.model.Produto
+import com.nevesrafael.anacosmeticos.model.ProdutoEnvio
 import com.nevesrafael.anacosmeticos.telas.estoque_envio.EstoqueEnvioActivity
 
 class CriaEnvioActivity : AppCompatActivity() {
@@ -22,15 +23,16 @@ class CriaEnvioActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCriaEnvioBinding
     private lateinit var envioDao: EnvioDao
     private var envioId = 0
-    private lateinit var adapter: CriaEnvioCaixaAdapter
+    private lateinit var caixaEnvioAdapter: CriaEnvioCaixaAdapter
+    private lateinit var produtoEnvioAdapter: CriaEnvioProdutosAdapter
+
+    private val produtosSelecionados = mutableListOf<ProdutoEnvio>()
+    private val caixasCriadas = mutableListOf<Caixa>()
 
     companion object {
         const val REQUEST_CODE_PRODUTO_ENVIO = 123
         const val EXTRA_PRODUTO_ENVIO = "extra.produto.envio"
         const val EXTRA_PRODUTO_ENVIO_QUANTIDADE = "extra.produto.envio.quantidade"
-        const val REQUEST_CODE_CAIXA_ENVIO = 456
-        const val EXTRA_CAIXA_ENVIO = "extra.caixa.comprimento"
-
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,7 +50,9 @@ class CriaEnvioActivity : AppCompatActivity() {
         configuraFabProduto()
         configuraFabCaixa()
         configuraRecyclerViewListaCaixaEnvio()
+        configuraRecyclerViewListaProdutoEnvio()
     }
+
 
     // esse cara é chamado quando volto de um startActivityForResult
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -59,39 +63,49 @@ class CriaEnvioActivity : AppCompatActivity() {
             val produto = data?.getParcelableExtra<Produto>(EXTRA_PRODUTO_ENVIO)
             val produtoQuantidade = data?.getIntExtra(EXTRA_PRODUTO_ENVIO_QUANTIDADE, 0)
 
-            if (produto != null) {
-                Toast.makeText(
-                    this,
-                    "produto chegou: ${produto.nome} com estoque: $produtoQuantidade",
-                    Toast.LENGTH_LONG
-                ).show()
+            if (produto != null && produtoQuantidade != null) {
+                val produtoEnvio = ProdutoEnvio(0, 0, produto.id, produtoQuantidade)
+                produtoEnvio.produto = produto
+
+                //na verdade na linha 67 eu crio um novo objeto ProdutoEnvio, falo pra ele que:
+                // - o id do produtoEnvio é 0
+                // - o id do envioId é 0 tbm (até agora não foi salvo o envio)
+                // - o id do produtoId é produto.id
+                // - a quantidade é produtoQuantidade
+                //
+                //depois disso na linha 68 eu falo que o objeto produto referente aquele produtoEnvio é o produto que eu peguei lá da outra tela
+
+
+                produtosSelecionados.add(produtoEnvio)
+                produtoEnvioAdapter.atualiza(produtosSelecionados)
             }
-        }
-
-        // Aqui acontece quando eu volto do FAB de adicionar caixas no envio
-        if (requestCode == REQUEST_CODE_CAIXA_ENVIO && resultCode == Activity.RESULT_OK) {
-            val caixa = data?.getParcelableExtra<Caixa>(EXTRA_CAIXA_ENVIO)
-
         }
     }
 
+
+    private fun configuraRecyclerViewListaProdutoEnvio() {
+        produtoEnvioAdapter = CriaEnvioProdutosAdapter()
+        binding.recyclerViewProdutosEnviados.adapter = produtoEnvioAdapter
+        binding.recyclerViewProdutosEnviados.layoutManager = LinearLayoutManager(this)
+    }
+
+
     private fun configuraRecyclerViewListaCaixaEnvio() {
-        adapter = CriaEnvioCaixaAdapter()
-        binding.recyclerViewCaixasEnvidas.adapter = adapter
+        caixaEnvioAdapter = CriaEnvioCaixaAdapter()
+        binding.recyclerViewCaixasEnvidas.adapter = caixaEnvioAdapter
         binding.recyclerViewCaixasEnvidas.layoutManager = LinearLayoutManager(this)
-
-
     }
 
     private fun configuraFabCaixa() {
         binding.fabAddNaListaCaixa.setOnClickListener {
-            FormularioCaixaDialog(this).mostra(quandoClicaNoSalvar = {
-                val intent = Intent(this, CriaEnvioActivity::class.java)
-                startActivityForResult(intent, REQUEST_CODE_CAIXA_ENVIO)
-            })
-
+            FormularioCaixaDialog(this).mostra(
+                quandoClicaNoSalvar = { caixa ->
+                    // guardar numa lista dentro da Cria Envio
+                    caixasCriadas.add(caixa)
+                    caixaEnvioAdapter.atualiza(caixasCriadas)
+                }
+            )
         }
-
     }
 
     private fun configuraFabProduto() {

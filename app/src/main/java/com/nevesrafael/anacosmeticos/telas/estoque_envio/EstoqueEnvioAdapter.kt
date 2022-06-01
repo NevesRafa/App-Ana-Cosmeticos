@@ -37,7 +37,7 @@ class EstoqueEnvioViewHolder(val binding: ProdutosEnviadosBinding) :
     fun vincula(produto: Produto, quandoClicaNoProduto: (Produto) -> Unit) {
         binding.enviadoNomeProduto.text = produto.nome
         binding.enviadoDescricaoProduto.text = produto.categoria
-        binding.enviadoQuantidadeProduto.text = produto.quantidade.toString()
+        binding.enviadoQuantidadeProduto.text = produto.estoque.toString()
         binding.enviadoUndMedidaProduto.text = produto.undMedida.toString()
 
         if (produto.tipoUndMedida == 0) {

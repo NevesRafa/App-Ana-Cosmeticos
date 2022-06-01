@@ -3,6 +3,10 @@ package com.nevesrafael.anacosmeticos.telas.tela_inicial
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.nevesrafael.anacosmeticos.database.AppDatabase
+import com.nevesrafael.anacosmeticos.database.dados_iniciais.carregaCategorias
+import com.nevesrafael.anacosmeticos.database.dados_iniciais.carregaFabricantes
+import com.nevesrafael.anacosmeticos.database.dados_iniciais.carregaProdutos
 import com.nevesrafael.anacosmeticos.databinding.ActivityTelaInicialBinding
 import com.nevesrafael.anacosmeticos.telas.lista_envios.ListaEnviosActivity
 import com.nevesrafael.anacosmeticos.telas.lista_produtos.ListaProdutosActivity
@@ -24,11 +28,13 @@ class TelaInicialActivity : AppCompatActivity() {
         configuraBotaoEnvios()
 
 
-       // Rodar somente na instalação do App para carregar categorias e fabricantes ja pre definidos
-//        val categoriaDao = AppDatabase.instancia(this).categoriaDao()
-//        val fabricanteDao = AppDatabase.instancia(this).fabricanteDao()
-//        carregaCategorias(categoriaDao)
-//        carregaFabricantes(fabricanteDao)
+        //Rodar somente na instalação do App para carregar categorias e fabricantes ja pre definidos
+        val categoriaDao = AppDatabase.instancia(this).categoriaDao()
+        val fabricanteDao = AppDatabase.instancia(this).fabricanteDao()
+        val produtoDao = AppDatabase.instancia(this).produtoDao()
+        carregaCategorias(categoriaDao)
+        carregaFabricantes(fabricanteDao)
+        carregaProdutos(produtoDao)
 
     }
 

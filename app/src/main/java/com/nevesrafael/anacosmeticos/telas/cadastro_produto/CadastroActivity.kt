@@ -76,7 +76,7 @@ class CadastroActivity : AppCompatActivity() {
             categoria.setText(produtoCarregado.categoria)
             fabricante.setText(produtoCarregado.fabricante)
             undMedida.setText(produtoCarregado.undMedida.toString())
-            quantidade.setText(produtoCarregado.quantidade.toString())
+            quantidade.setText(produtoCarregado.estoque.toString())
             valorCompra.setText(produtoCarregado.valorCompra.toString())
             valorVendaRs.setText(produtoCarregado.valorVendaRs.toString())
             valorVendaIene.setText(produtoCarregado.valorVendaY.toString())
@@ -129,7 +129,7 @@ class CadastroActivity : AppCompatActivity() {
             fabricante = fabricante,
             tipoUndMedida = tipoUndMedida,
             undMedida = undMedida,
-            quantidade = quantidade,
+            estoque = quantidade,
             valorCompra = valorCompra,
             valorVendaRs = valorVendaRs,
             valorVendaY = valorVendaY,
