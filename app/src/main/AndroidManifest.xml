@@ -12,13 +12,16 @@
         android:theme="@style/Theme.AnaCosmeticos">
         <activity
             android:name=".InformacoesDaCaixaActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Informações do Envio" />
         <activity
             android:name=".telas.estoque_envio.EstoqueEnvioActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Produtos em Estoque" />
         <activity
             android:name=".telas.cria_envio.CriaEnvioActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Cria Envio" />
         <activity
             android:name=".telas.lista_envios.ListaEnviosActivity"
             android:exported="false"

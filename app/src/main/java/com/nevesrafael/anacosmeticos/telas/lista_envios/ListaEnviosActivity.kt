@@ -40,6 +40,8 @@ class ListaEnviosActivity : AppCompatActivity() {
                 this,
                 InformacoesDaCaixaActivity::class.java
             )//intent para abrir a tela informacões da caixa
+            //falta trazer as informações da caixa
+            startActivity(intent)
         })
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(this)

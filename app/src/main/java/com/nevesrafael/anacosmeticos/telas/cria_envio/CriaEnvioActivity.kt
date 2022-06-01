@@ -41,10 +41,14 @@ class CriaEnvioActivity : AppCompatActivity() {
         envioDao = AppDatabase.instancia(this).envioDao()
         setContentView(binding.root)
 
-        val titulo = SpannableString("Dados da Caixa")
-        titulo.setSpan(UnderlineSpan(), 0, titulo.length, 0)
+        val tituloCaixa = SpannableString("Dados da Caixa")
+        tituloCaixa.setSpan(UnderlineSpan(), 0, tituloCaixa.length, 0)
+        binding.dadosCaixa.text = tituloCaixa
 
-        binding.dadosCaixa.text = titulo
+        val tituloProdutos = SpannableString("Produtos para Envio")
+        tituloProdutos.setSpan(UnderlineSpan(), 0, tituloProdutos.length, 0)
+
+        binding.produtosParaEnvio.text = tituloProdutos
 
         configuraBotaoSalvar()
         configuraFabProduto()
