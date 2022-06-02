@@ -12,11 +12,12 @@
         android:id="@+id/botao_cadastra"
         android:layout_width="180dp"
         android:layout_height="180dp"
+        android:layout_marginStart="16dp"
         android:background="@drawable/shape_tela_inicial"
-        android:text="Cadastra"
+        android:text="Cadastra Produto"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@id/botao_lista_produtos"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/botao_lista_envios"
+        app:layout_constraintEnd_toStartOf="@id/botao_lista_produtos"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,13 +25,15 @@
         android:id="@+id/botao_lista_produtos"
         android:layout_width="180dp"
         android:layout_height="180dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/shape_tela_inicial"
         android:text="lista produtos\n(Estoque)"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@id/botao_lista_envios"
-        app:layout_constraintEnd_toEndOf="@id/botao_cadastra"
-        app:layout_constraintStart_toStartOf="@id/botao_cadastra"
-        app:layout_constraintTop_toBottomOf="@id/botao_cadastra" />
+        app:layout_constraintBottom_toTopOf="@id/botao_lista_clientes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/botao_cadastra"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <Button
@@ -39,6 +42,20 @@
         android:layout_height="180dp"
         android:background="@drawable/shape_tela_inicial"
         android:text="Lista de Envios\n(Japão)"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/botao_cadastra"
+        app:layout_constraintStart_toStartOf="@id/botao_cadastra"
+        app:layout_constraintTop_toBottomOf="@id/botao_cadastra" />
+
+    <Button
+        android:id="@+id/botao_lista_clientes"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/shape_tela_inicial"
+        android:text="Lista Clientes"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/botao_lista_produtos"
