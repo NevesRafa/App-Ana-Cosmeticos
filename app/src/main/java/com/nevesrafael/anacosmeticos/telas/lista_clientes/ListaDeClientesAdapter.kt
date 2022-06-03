@@ -6,7 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.nevesrafael.anacosmeticos.databinding.ClienteBinding
 import com.nevesrafael.anacosmeticos.model.Cliente
 
-class ListaDeClientesAdapter : RecyclerView.Adapter<ListaDeClientesViewHolder>() {
+class ListaDeClientesAdapter(val quandoClicarNoCliente: (Cliente) -> Unit) :
+    RecyclerView.Adapter<ListaDeClientesViewHolder>() {
 
     private val clientes = mutableListOf<Cliente>()
 
@@ -19,7 +20,7 @@ class ListaDeClientesAdapter : RecyclerView.Adapter<ListaDeClientesViewHolder>()
 
     override fun onBindViewHolder(holder: ListaDeClientesViewHolder, position: Int) {
         val cliente = clientes[position]
-        holder.vincula(cliente, position)
+        holder.vincula(cliente, position, quandoClicarNoCliente)
     }
 
     override fun getItemCount() = clientes.size
@@ -34,10 +35,12 @@ class ListaDeClientesAdapter : RecyclerView.Adapter<ListaDeClientesViewHolder>()
 class ListaDeClientesViewHolder(val binding: ClienteBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
-    fun vincula(cliente: Cliente, position: Int) {
+    fun vincula(cliente: Cliente, position: Int, quandoClicarNoCliente: (Cliente) -> Unit) {
 
         binding.nomeCliente.text = cliente.nome
         binding.numeroDoCliente.text = "${position + 1}"
+
+        binding.root.setOnClickListener { quandoClicarNoCliente(cliente) }
 
     }
 }

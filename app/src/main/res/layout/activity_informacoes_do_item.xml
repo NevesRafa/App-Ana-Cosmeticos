@@ -28,7 +28,6 @@
             android:layout_marginStart="16dp"
             android:background="@drawable/shape"
             android:elevation="10dp"
-            android:fontFamily="@font/montserrat_alternates"
             android:textColor="#6B4950"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -52,10 +51,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:enabled="false"
-                android:textSize="16sp"
-                android:fontFamily="@font/montserrat_alternates"
                 android:hint="Categoria"
-                android:textColor="#6B4950" />
+                android:textColor="#6B4950"
+                android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -73,11 +71,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:enabled="false"
-                android:textSize="16sp"
-
-                android:fontFamily="@font/montserrat_alternates"
                 android:hint="Fabricante"
-                android:textColor="#6B4950" />
+                android:textColor="#6B4950"
+                android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -95,10 +91,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:enabled="false"
-                android:textSize="16sp"
-                android:fontFamily="@font/montserrat_alternates"
                 android:hint="Und. medida"
-                android:textColor="#6B4950" />
+                android:textColor="#6B4950"
+                android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -116,10 +111,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:enabled="false"
-                android:textSize="16sp"
-                android:fontFamily="@font/montserrat_alternates"
                 android:hint="Quantidade"
-                android:textColor="#6B4950" />
+                android:textColor="#6B4950"
+                android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -137,10 +131,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:enabled="false"
-                android:textSize="16sp"
-                android:fontFamily="@font/montserrat_alternates"
                 android:hint="Valor de Compra"
-                android:textColor="#6B4950" />
+                android:textColor="#6B4950"
+                android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -158,10 +151,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:enabled="false"
-                android:textSize="16sp"
-                android:fontFamily="@font/montserrat_alternates"
                 android:hint="Valor venda (R$)"
-                android:textColor="#6B4950" />
+                android:textColor="#6B4950"
+                android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -180,10 +172,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:enabled="false"
-                android:textSize="16sp"
-                android:fontFamily="@font/montserrat_alternates"
                 android:hint="Valor venda (¥)"
-                android:textColor="#6B4950" />
+                android:textColor="#6B4950"
+                android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
 

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.nevesrafael.anacosmeticos.InformacoesDoClienteActivity
 import com.nevesrafael.anacosmeticos.database.AppDatabase
 import com.nevesrafael.anacosmeticos.database.ClienteDao
 import com.nevesrafael.anacosmeticos.databinding.ActivityListaDeClientesBinding
@@ -32,7 +33,11 @@ class ListaDeClientesActivity : AppCompatActivity() {
 
     private fun configuraRecyclerView() {
 
-        adapter = ListaDeClientesAdapter()
+        adapter = ListaDeClientesAdapter(quandoClicarNoCliente = { cliente ->
+            val intent = Intent(this, InformacoesDoClienteActivity::class.java)
+            intent.putExtra(InformacoesDoClienteActivity.EXTRA_CLIENTE_ID_RECEBIDO, cliente.id)
+            startActivity(intent)
+        })
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
 
