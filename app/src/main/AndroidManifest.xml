@@ -11,7 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AnaCosmeticos">
         <activity
-            android:name=".ListaDeClientesActivity"
+            android:name=".telas.cadastra_cliente.CadastraClienteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".telas.lista_clientes.ListaDeClientesActivity"
             android:exported="false" />
         <activity
             android:name=".telas.informacoes_da_caixa.InformacoesDaCaixaActivity"

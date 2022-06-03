@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.nevesrafael.anacosmeticos.model.*
 
 @Database(
-    entities = [Produto::class, Categoria::class, Fabricante::class, Caixa::class, Envio::class, ProdutoEnvio::class],
+    entities = [Produto::class, Categoria::class, Fabricante::class, Caixa::class, Envio::class, ProdutoEnvio::class, Cliente::class],
     version = 1,
     exportSchema = true
 )
@@ -17,7 +17,8 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun fabricanteDao(): FabricanteDao
     abstract fun caixaDao(): CaixaDao
     abstract fun envioDao(): EnvioDao
-    abstract fun produtoEnvio(): ProdutoEnvioDao
+    abstract fun produtoEnvioDao(): ProdutoEnvioDao
+    abstract fun clienteDao(): ClienteDao
 
 
     companion object {

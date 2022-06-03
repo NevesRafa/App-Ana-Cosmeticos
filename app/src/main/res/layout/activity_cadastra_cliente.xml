@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFCFD9"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_text_nome"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Nome"
+            app:layout_constraintBottom_toTopOf="@id/input_text_rua"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_text_rua"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Rua"
+            app:layout_constraintBottom_toTopOf="@id/input_text_cidade"
+            app:layout_constraintEnd_toEndOf="@id/input_text_nome"
+            app:layout_constraintStart_toStartOf="@id/input_text_nome"
+            app:layout_constraintTop_toBottomOf="@id/input_text_nome">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/rua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_text_cidade"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Cidade"
+            app:layout_constraintBottom_toTopOf="@id/input_text_estado"
+            app:layout_constraintEnd_toEndOf="@id/input_text_rua"
+            app:layout_constraintStart_toStartOf="@id/input_text_rua"
+            app:layout_constraintTop_toBottomOf="@id/input_text_rua">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cidade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_text_estado"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Estado"
+            app:layout_constraintBottom_toTopOf="@id/input_text_pais"
+            app:layout_constraintEnd_toEndOf="@id/input_text_cidade"
+            app:layout_constraintStart_toStartOf="@id/input_text_cidade"
+            app:layout_constraintTop_toBottomOf="@id/input_text_cidade">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/estado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_text_pais"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="País"
+            app:layout_constraintBottom_toTopOf="@id/input_text_cod_postal"
+            app:layout_constraintEnd_toEndOf="@id/input_text_estado"
+            app:layout_constraintStart_toStartOf="@id/input_text_estado"
+            app:layout_constraintTop_toBottomOf="@id/input_text_estado">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pais"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_text_cod_postal"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Cód. Postal"
+            app:layout_constraintBottom_toTopOf="@id/input_text_telefone"
+            app:layout_constraintEnd_toEndOf="@id/input_text_pais"
+            app:layout_constraintStart_toStartOf="@id/input_text_pais"
+            app:layout_constraintTop_toBottomOf="@id/input_text_pais">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cod_postal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_text_telefone"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Telefone"
+            app:layout_constraintBottom_toTopOf="@id/input_text_aniversario"
+            app:layout_constraintEnd_toEndOf="@id/input_text_cod_postal"
+            app:layout_constraintStart_toStartOf="@id/input_text_cod_postal"
+            app:layout_constraintTop_toBottomOf="@id/input_text_cod_postal">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/telefone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_text_aniversario"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Aniversário"
+            app:layout_constraintBottom_toTopOf="@+id/botao_salvar"
+            app:layout_constraintEnd_toEndOf="@id/input_text_telefone"
+            app:layout_constraintStart_toStartOf="@id/input_text_telefone"
+            app:layout_constraintTop_toBottomOf="@id/input_text_telefone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/aniversario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/botao_salvar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/shape"
+            android:text="Salvar"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_text_aniversario"
+            app:layout_constraintVertical_bias="1" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
