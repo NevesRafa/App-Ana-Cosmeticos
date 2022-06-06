@@ -4,11 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.nevesrafael.anacosmeticos.InformacoesDoClienteActivity
 import com.nevesrafael.anacosmeticos.database.AppDatabase
 import com.nevesrafael.anacosmeticos.database.ClienteDao
 import com.nevesrafael.anacosmeticos.databinding.ActivityListaDeClientesBinding
 import com.nevesrafael.anacosmeticos.telas.cadastra_cliente.CadastraClienteActivity
+import com.nevesrafael.anacosmeticos.telas.informacoes_do_cliente.InformacoesDoClienteActivity
 
 class ListaDeClientesActivity : AppCompatActivity() {
 

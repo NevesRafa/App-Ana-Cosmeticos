@@ -139,8 +139,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
             app:layout_constraintBottom_toTopOf="@id/input_text_aniversario"
-            app:layout_constraintEnd_toEndOf="@id/input_text_cod_postal"
+            app:layout_constraintEnd_toStartOf="@id/ligar_whatsapp"
             app:layout_constraintStart_toStartOf="@id/input_text_cod_postal"
             app:layout_constraintTop_toBottomOf="@id/input_text_cod_postal">
 
@@ -153,6 +154,19 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <ImageView
+            android:id="@+id/ligar_whatsapp"
+            android:layout_width="48dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="16dp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            app:layout_constraintBottom_toBottomOf="@id/input_text_telefone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/input_text_telefone"
+            app:srcCompat="@drawable/ic_whatsapp"
+            app:tint="#009688" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_text_aniversario"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -160,7 +174,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/input_text_telefone"
+            app:layout_constraintEnd_toEndOf="@id/input_text_cod_postal"
             app:layout_constraintStart_toStartOf="@id/input_text_telefone"
             app:layout_constraintTop_toBottomOf="@id/input_text_telefone">
 

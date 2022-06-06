@@ -82,9 +82,9 @@ class CadastraClienteActivity : AppCompatActivity() {
         val cidade = binding.cidade.text.toString()
         val estado = binding.estado.text.toString()
         val pais = binding.pais.text.toString()
-        val telefone = binding.telefone.text.toString()
-        val codPostal = binding.codPostal.text.toString()
-        val aniversario = binding.aniversario.text.toString()
+        val telefone = binding.telefone.masked
+        val codPostal = binding.codPostal.masked
+        val aniversario = binding.aniversario.masked
 
         return Cliente(
             id = clienteId,

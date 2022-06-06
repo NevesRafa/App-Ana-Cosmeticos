@@ -1,16 +1,19 @@
-package com.nevesrafael.anacosmeticos
+package com.nevesrafael.anacosmeticos.telas.informacoes_do_cliente
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.nevesrafael.anacosmeticos.R
 import com.nevesrafael.anacosmeticos.database.AppDatabase
 import com.nevesrafael.anacosmeticos.database.ClienteDao
 import com.nevesrafael.anacosmeticos.databinding.ActivityInformacoesDoClienteBinding
 import com.nevesrafael.anacosmeticos.model.Cliente
 import com.nevesrafael.anacosmeticos.telas.cadastra_cliente.CadastraClienteActivity
+
 
 class InformacoesDoClienteActivity : AppCompatActivity() {
 
@@ -30,6 +33,23 @@ class InformacoesDoClienteActivity : AppCompatActivity() {
         clienteDao = AppDatabase.instancia(this).clienteDao()
         setContentView(binding.root)
         clienteId = intent.getIntExtra(EXTRA_CLIENTE_ID_RECEBIDO, 0)
+        configuraBotaoWhats()
+    }
+
+    private fun configuraBotaoWhats() {
+        binding.ligarWhatsapp.setOnClickListener {
+            val numWhatsComMask = binding.telefone.text.toString()
+            val numWhatsSemMask = numWhatsComMask.replace("+", "")
+                .replace("(", "")
+                .replace(")", "")
+                .replace("-", "")
+
+            val url =
+                "https://api.whatsapp.com/send?phone=$numWhatsSemMask"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
     }
 
     override fun onResume() {

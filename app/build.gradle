@@ -54,4 +54,8 @@ dependencies {
     implementation "androidx.room:room-runtime:2.4.2"
     kapt "androidx.room:room-compiler:2.4.2"
 
+
+    // Maskara
+    implementation 'com.github.santalu:maskara:1.0.0'
+
 }

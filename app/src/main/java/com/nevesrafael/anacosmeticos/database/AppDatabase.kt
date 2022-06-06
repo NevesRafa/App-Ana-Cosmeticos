@@ -29,7 +29,9 @@ abstract class AppDatabase : RoomDatabase() {
                 AppDatabase::class.java,
                 "anaCosmeticos.db"
             ).allowMainThreadQueries()
+                .fallbackToDestructiveMigration()
                 .build()
+
 
         }
     }
